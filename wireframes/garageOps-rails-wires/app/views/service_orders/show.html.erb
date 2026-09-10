@@ -1,0 +1,136 @@
+<% content_for :title, "#{@order[:number]} — GarageOps" %>
+
+<div class="space-y-6">
+  <%= link_to "Back to Service Orders", service_orders_path, class: "link link-primary text-sm" %>
+
+  <header>
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-bold"><%= @order[:number] %></h1>
+      <span class="badge <%= @order[:status_class] %>"><%= @order[:status] %></span>
+      <span class="badge badge-outline">Sample data</span>
+    </div>
+    <p class="mt-2 text-lg"><%= @order[:vehicle] %> <span class="font-mono text-sm text-base-content/60">· <%= @order[:registration] %></span></p>
+  </header>
+
+  <dl class="grid gap-4 rounded-box border border-base-300 bg-base-100 p-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div><dt class="text-sm text-base-content/60">Customer</dt><dd class="mt-1 font-medium"><%= @order[:customer] %></dd></div>
+    <div><dt class="text-sm text-base-content/60">Assigned Advisor</dt><dd class="mt-1 font-medium"><%= @order[:advisor] || "Unassigned" %></dd></div>
+    <div><dt class="text-sm text-base-content/60">Priority</dt><dd class="mt-1 font-medium"><%= @order[:priority] %></dd></div>
+    <div><dt class="text-sm text-base-content/60">Reported Issue</dt><dd class="mt-1"><%= @order[:issue] %></dd></div>
+  </dl>
+
+  <% if @work_items %>
+    <p class="text-sm text-base-content/60">Location: Central Workshop · Sample snapshot: 10 Sep 2026</p>
+
+    <section aria-labelledby="next-action-heading" class="rounded-box border border-warning bg-warning/10 p-5">
+      <div class="flex flex-wrap items-center gap-3">
+        <h2 id="next-action-heading" class="text-lg font-semibold">Next Action: Confirm Parts Delivery</h2>
+        <span class="badge badge-warning">Blocking Issue · Open</span>
+      </div>
+      <p class="mt-2">The alternator has not arrived. No further approved work can proceed until it is available.</p>
+      <p class="mt-2 text-sm text-base-content/70">Assigned to Sam Parker · Follow-up: 10 Sep, 11:00 · Review the agreed completion date after contacting the supplier.</p>
+      <a href="#parts" class="link mt-3 inline-block text-sm">Review Parts</a>
+    </section>
+
+    <div class="grid items-start gap-6 xl:grid-cols-3">
+      <div class="space-y-6 xl:col-span-2">
+        <section aria-labelledby="estimate-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h2 id="estimate-heading" class="text-xl font-semibold">Diagnosis & Estimate</h2>
+            <span class="badge badge-success">Estimate v1 · Approved</span>
+          </div>
+          <p class="mt-4">Charging-system tests indicate an alternator fault. The drive belt is worn and should be replaced during the same visit.</p>
+          <dl class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div><dt class="text-sm text-base-content/60">Customer Decision</dt><dd class="mt-1">Full scope approved by Morgan Reed, Fleet Manager.</dd></div>
+            <div><dt class="text-sm text-base-content/60">Recorded By</dt><dd class="mt-1">Sam Parker · Phone · 08 Sep 2026, 10:15</dd></div>
+            <div><dt class="text-sm text-base-content/60">Approved Total</dt><dd class="mt-1 font-semibold"><%= number_with_precision(@order_total, precision: 2, delimiter: ",") %> PLN</dd></div>
+            <div><dt class="text-sm text-base-content/60">Agreed Completion Date</dt><dd class="mt-1 font-semibold">15 Sep 2026</dd></div>
+          </dl>
+          <p class="mt-4 text-sm text-base-content/60">Diagnosis is included in this total. Additional work requires a new customer decision.</p>
+        </section>
+
+        <section aria-labelledby="work-heading" class="overflow-hidden rounded-box border border-base-300 bg-base-100">
+          <div class="p-5"><h2 id="work-heading" class="text-xl font-semibold">Work Items</h2><p class="mt-1 text-sm text-base-content/60">Approved scope · Coordinated by Sam Parker</p></div>
+          <div class="overflow-x-auto">
+            <table class="table">
+              <caption class="sr-only">Approved work and labor charges</caption>
+              <thead class="bg-base-200"><tr><th scope="col">Work</th><th scope="col" class="text-right">Labor (PLN)</th><th scope="col">Status</th></tr></thead>
+              <tbody>
+                <% @work_items.each do |item| %>
+                  <tr><th scope="row" class="font-normal"><%= item[:name] %></th><td class="text-right tabular-nums"><%= number_with_precision(item[:labor], precision: 2, delimiter: ",") %></td><td><span class="badge whitespace-nowrap <%= item[:status] == "Done" ? "badge-success" : "badge-ghost" %>"><%= item[:status] %></span></td></tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <p class="p-5 text-sm text-base-content/60">Final check before collection: verify charging output, belt fitment and dashboard warning lights.</p>
+        </section>
+
+        <section id="parts" aria-labelledby="parts-heading" class="scroll-mt-6 overflow-hidden rounded-box border border-base-300 bg-base-100">
+          <div class="p-5"><h2 id="parts-heading" class="text-xl font-semibold">Parts</h2><p class="mt-1 text-sm text-base-content/60">Supplied by the workshop · Sample supplier: Example Auto Parts</p></div>
+          <div class="overflow-x-auto">
+            <table class="table">
+              <caption class="sr-only">Required parts and delivery status</caption>
+              <thead class="bg-base-200"><tr><th scope="col">Part</th><th scope="col">Qty</th><th scope="col" class="text-right">Total (PLN)</th><th scope="col">Delivery</th></tr></thead>
+              <tbody>
+                <% @parts.each do |part| %>
+                  <tr>
+                    <th scope="row" class="font-normal"><%= part[:name] %></th><td><%= part[:quantity] %></td>
+                    <td class="text-right tabular-nums"><%= number_with_precision(part[:total], precision: 2, delimiter: ",") %></td>
+                    <td><span class="badge <%= part[:status] == "Available" ? "badge-success" : "badge-warning" %>"><%= part[:status] %></span><p class="mt-1 text-xs text-base-content/60"><%= part[:delivery] %></p></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <div class="space-y-6">
+        <section aria-labelledby="payments-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+          <div class="flex flex-wrap items-center gap-3"><h2 id="payments-heading" class="text-xl font-semibold">Payments</h2><span class="badge badge-warning">Partially Paid</span></div>
+          <dl class="mt-4 space-y-3 text-sm">
+            <% [["Labor", @labor_total], ["Parts", @parts_total], ["Approved Total", @order_total], ["Advance Payment Received", @advance_payment]].each do |label, amount| %>
+              <div class="flex justify-between gap-4"><dt><%= label %></dt><dd class="whitespace-nowrap tabular-nums"><%= number_with_precision(amount, precision: 2, delimiter: ",") %> PLN</dd></div>
+            <% end %>
+            <div class="flex justify-between gap-4 border-t border-base-300 pt-3 text-base font-semibold"><dt>Remaining Balance</dt><dd class="whitespace-nowrap tabular-nums"><%= number_with_precision(@balance, precision: 2, delimiter: ",") %> PLN</dd></div>
+          </dl>
+          <p class="mt-4 text-sm text-base-content/70">Advance received on 08 Sep by bank transfer. Recorded by Riley Adams.</p>
+          <p class="mt-2 text-sm text-base-content/70">Remaining balance payable at collection. No payment is overdue.</p>
+        </section>
+
+        <section aria-labelledby="intake-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+          <h2 id="intake-heading" class="text-xl font-semibold">Intake Notes</h2>
+          <dl class="mt-4 space-y-3 text-sm">
+            <div><dt class="text-base-content/60">Vehicle Received</dt><dd class="mt-1">07 Sep 2026 · Central Workshop</dd></div>
+            <div><dt class="text-base-content/60">Recorded Mileage</dt><dd class="mt-1">241,300 km</dd></div>
+            <div><dt class="text-base-content/60">Diagnosis Authorization</dt><dd class="mt-1">Up to 150.00 PLN approved by phone on 07 Sep; recorded by Sam Parker.</dd></div>
+            <div><dt class="text-base-content/60">Condition & Keys</dt><dd class="mt-1">One key received. Existing scratch on rear loading door.</dd></div>
+          </dl>
+        </section>
+      </div>
+    </div>
+
+    <section aria-labelledby="activity-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+      <h2 id="activity-heading" class="text-xl font-semibold">Activity</h2>
+      <ol class="mt-4 divide-y divide-base-300">
+        <% [
+          ["10 Sep · 09:00", "Sam Parker", "Opened blocking issue: alternator delivery overdue. Follow-up scheduled for 11:00."],
+          ["08 Sep · 11:00", "Sam Parker", "Parts order recorded. Service Order moved to In Progress."],
+          ["08 Sep · 10:30", "Riley Adams", "Recorded advance payment of 500.00 PLN by bank transfer."],
+          ["08 Sep · 10:15", "Sam Parker", "Recorded customer approval of estimate v1: 2,350.00 PLN and completion on 15 Sep."],
+          ["07 Sep · 15:00", "Sam Parker", "Diagnosis completed. Estimate v1 prepared and presented to the customer."],
+          ["07 Sep · 08:30", "Sam Parker", "Assigned as Advisor; recorded diagnosis authorization and moved the order to Assessment."],
+          ["07 Sep · 08:15", "Riley Adams", "Vehicle received and Service Order created at Central Workshop."]
+        ].each do |date, actor, detail| %>
+          <li class="py-3"><p class="text-sm"><%= detail %></p><p class="mt-1 text-xs text-base-content/60"><%= date %> · <%= actor %></p></li>
+        <% end %>
+      </ol>
+    </section>
+  <% else %>
+    <div class="rounded-box border border-base-300 bg-base-100 p-5">
+      <h2 class="text-xl font-semibold">Detailed Workflow Example</h2>
+      <p class="mt-2 text-base-content/70">The Ford Transit example includes an approved estimate, work items, parts, an advance payment and a blocking issue.</p>
+      <%= link_to "View Example: SO-2026-0104", service_order_path("SO-2026-0104"), class: "btn btn-primary mt-4" %>
+    </div>
+  <% end %>
+</div>

@@ -1,5 +1,49 @@
+<% content_for :title, "Staff & Permissions — GarageOps" %>
 <%= render "settings/tabs" %>
 
 <div class="py-6">
-  Pracownicy
+  <div class="mb-6">
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-bold">Staff & Permissions</h1>
+      <span class="badge badge-outline">Sample data</span>
+    </div>
+    <p class="mt-2 text-base-content/70">People, job titles and access across your organization's locations.</p>
+  </div>
+
+  <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+    <table class="table">
+      <caption class="px-4 py-3 text-left text-sm text-base-content/70"><%= @memberships.size %> members · Titles describe jobs; permissions control access.</caption>
+      <thead class="bg-base-200">
+        <tr>
+          <th scope="col">Member</th>
+          <th scope="col">Title</th>
+          <th scope="col">Location Access</th>
+          <th scope="col">Initial Permission Profile</th>
+          <th scope="col">Status</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @memberships.each do |member| %>
+          <tr class="hover:bg-base-200/50">
+            <th scope="row" class="font-normal">
+              <%= link_to member[:name], settings_membership_path(member[:id]), class: "link link-primary font-semibold" %>
+              <p class="mt-1 text-sm text-base-content/60"><%= member[:email] %></p>
+            </th>
+            <td class="whitespace-nowrap"><%= member[:title] %></td>
+            <td class="min-w-44">
+              <ul class="space-y-1">
+                <% member[:locations].each do |location| %>
+                  <li><%= location[:name] %></li>
+                <% end %>
+              </ul>
+            </td>
+            <td><%= member[:profile] %><span class="ml-1 text-xs text-base-content/60">v<%= member[:profile_version] %></span></td>
+            <td><span class="badge <%= member[:status] == "Active" ? "badge-success" : "badge-warning" %>"><%= member[:status] %></span></td>
+            <td><%= link_to "View Access", settings_membership_path(member[:id]), class: "btn btn-ghost btn-sm whitespace-nowrap", aria: { label: "View access for #{member[:name]}" } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

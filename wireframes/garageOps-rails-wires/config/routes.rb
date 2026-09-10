@@ -10,13 +10,14 @@ Rails.application.routes.draw do
 
   resources :customers
   resources :vehicles
+  resources :locations, only: :index
   resources :service_orders
-
-  resources :service_orders, only: %i[new create]
 
   namespace :settings do
     root "dashboard#index"
     resources :memberships
+    resources :permission_profiles
+    resources :locations
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
