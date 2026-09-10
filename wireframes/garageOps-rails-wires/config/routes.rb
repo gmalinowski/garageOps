@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :service_orders
   resources :inventory_items
   resources :purchase_orders
+  resources :registrations, only: [:new, :create]
 
   namespace :settings do
     root "dashboard#index"
