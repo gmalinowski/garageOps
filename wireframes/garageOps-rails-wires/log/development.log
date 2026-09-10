@@ -9516,3 +9516,313 @@ Processing by ServiceOrdersController#show as HTML
 Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
 
 
+Finished "/hotwire-livereload" [WebSocket] for 127.0.0.1 at 2026-09-10 17:37:48 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/service_orders/SO-2026-0104" for 127.0.0.1 at 2026-09-10 17:37:48 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0104"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 127.0.0.1 at 2026-09-10 17:37:48 +0200
+Started GET "/hotwire-livereload" [WebSocket] for 127.0.0.1 at 2026-09-10 17:37:48 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/dashboard" for 127.0.0.1 at 2026-09-10 17:37:52 +0200
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 127.0.0.1 at 2026-09-10 17:37:52 +0200
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2026-09-10 17:37:53 +0200
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2026-09-10 17:37:54 +0200
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/memberships" for 127.0.0.1 at 2026-09-10 17:37:55 +0200
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:37:56 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:40:03 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:40:52 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Finished "/hotwire-livereload" [WebSocket] for 127.0.0.1 at 2026-09-10 17:41:09 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:41:09 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/hotwire-livereload" for 127.0.0.1 at 2026-09-10 17:41:10 +0200
+Started GET "/hotwire-livereload" [WebSocket] for 127.0.0.1 at 2026-09-10 17:41:10 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/settings/memberships" for 127.0.0.1 at 2026-09-10 17:41:11 +0200
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:41:11 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/settings/memberships" for 127.0.0.1 at 2026-09-10 17:41:11 +0200
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2026-09-10 17:41:12 +0200
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/memberships" for 127.0.0.1 at 2026-09-10 17:41:13 +0200
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/settings/locations" for 127.0.0.1 at 2026-09-10 17:41:15 +0200
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2026-09-10 17:41:17 +0200
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 127.0.0.1 at 2026-09-10 17:41:18 +0200
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2026-09-10 17:41:24 +0200
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2026-09-10 17:41:24 +0200
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 127.0.0.1 at 2026-09-10 17:41:27 +0200
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/SO-2026-0108" for 127.0.0.1 at 2026-09-10 17:41:28 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0108"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/SO-2026-0104" for 127.0.0.1 at 2026-09-10 17:41:29 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0104"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/SO-2026-0108" for 127.0.0.1 at 2026-09-10 18:19:55 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0108"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/service_orders/SO-2026-0105" for 127.0.0.1 at 2026-09-10 18:19:57 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0105"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/service_orders/SO-2026-0104" for 127.0.0.1 at 2026-09-10 18:19:58 +0200
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0104"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2026-09-10 18:20:00 +0200
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/new" for 127.0.0.1 at 2026-09-10 18:20:01 +0200
+Processing by ServiceOrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/new.html.erb within layouts/application
+  Rendered service_orders/_form.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered service_orders/new.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
