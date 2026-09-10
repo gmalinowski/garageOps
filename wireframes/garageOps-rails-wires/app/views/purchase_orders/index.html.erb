@@ -1,0 +1,50 @@
+<% content_for :title, "Purchase Orders — GarageOps" %>
+
+<div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div>
+    <div class="flex flex-wrap items-center gap-3"><h1 class="text-3xl font-bold">Purchase Orders</h1><span class="badge badge-outline">Sample data</span></div>
+    <p class="mt-2 text-base-content/70">Supplier purchases for repairs, stock replenishment and workshop equipment.</p>
+  </div>
+  <%= link_to "View Inventory", inventory_items_path, class: "btn btn-outline" %>
+</div>
+
+<div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+  <table class="table">
+    <caption class="px-4 py-3 text-left text-sm text-base-content/70"><%= @purchase_orders.size %> purchase orders · All locations · Amounts in PLN · Sample snapshot: 10 Sep 2026</caption>
+    <thead class="bg-base-200"><tr><th scope="col">Purchase Order</th><th scope="col">Service Order</th><th scope="col">Supplier</th><th scope="col">Receiving Location</th><th scope="col">Status</th><th scope="col">Delivery</th><th scope="col" class="text-right">Order Value</th></tr></thead>
+    <tbody>
+      <% @purchase_orders.each do |order| %>
+        <tr id="<%= order[:number] %>" class="scroll-mt-6 align-top hover:bg-base-200/50 target:bg-base-200">
+          <th scope="row" class="min-w-64 font-normal">
+            <p class="font-semibold"><%= order[:number] %></p><p class="mt-1 text-sm text-base-content/60"><%= order[:purpose] %></p>
+            <details class="mt-3">
+              <summary class="cursor-pointer text-sm font-medium">Items & Receipts (<%= order[:lines].size %>)</summary>
+              <ul class="mt-2 space-y-3 rounded-box bg-base-200 p-3">
+                <% order[:lines].each do |line| %>
+                  <li class="text-sm">
+                    <p class="font-medium"><%= line[:name] %></p>
+                    <p class="mt-1 text-xs"><%= line[:quantity] %> <%= line[:unit] %> × <%= number_with_precision(line[:price], precision: 2, delimiter: ",") %> PLN</p>
+                    <p class="mt-1 text-xs text-base-content/60">Received: <%= line[:received] %> / <%= line[:quantity] %> <%= line[:unit] %></p>
+                  </li>
+                <% end %>
+              </ul>
+            </details>
+          </th>
+          <td class="min-w-40">
+            <% if order[:service_order_number] %>
+              <%= link_to order[:service_order_number], service_order_path(order[:service_order_number]), class: "link link-primary whitespace-nowrap" %>
+            <% else %>
+              <span class="text-sm text-base-content/60">General Purchase</span>
+            <% end %>
+          </td>
+          <td class="min-w-44"><%= order[:supplier] %></td>
+          <td class="min-w-40"><%= order[:location] %><p class="mt-1 text-xs text-base-content/60">Responsible: <%= order[:owner] %></p></td>
+          <td><span class="badge whitespace-nowrap <%= order[:badge] %>"><%= order[:status] %></span></td>
+          <td class="min-w-40"><%= order[:expected] %><% if order[:overdue] %><p class="mt-2"><span class="badge badge-error">Delivery Overdue</span></p><% end %></td>
+          <td class="whitespace-nowrap text-right tabular-nums"><%= number_with_precision(order[:lines].sum { |line| line[:quantity] * line[:price] }, precision: 2, delimiter: ",") %> PLN</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<p class="mt-4 text-sm text-base-content/60">Expand Items & Receipts to see ordered and delivered quantities. Draft and cancelled purchases do not count as incoming stock. Order value does not indicate payment status.</p>

@@ -12,6 +12,8 @@ class ServiceOrdersController < ApplicationController
     @order = sample_service_orders.find { |order| order[:number] == params[:id] }
     raise ActiveRecord::RecordNotFound, "Service order not found" unless @order
 
+    @purchase_orders = SamplePurchaseOrders.all.select { |purchase| purchase[:service_order_number] == @order[:number] }
+
     if @order[:number] == "SO-2026-0104"
       @work_items = [
         { name: "Charging system diagnosis", labor: 150, status: "Done" },

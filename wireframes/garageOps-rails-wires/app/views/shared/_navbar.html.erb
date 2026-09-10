@@ -11,6 +11,8 @@
         <li><%= link_to "Orders", service_orders_path %></li>
         <li><%= link_to "Customers", customers_path %></li>
         <li><%= link_to "Vehicles", vehicles_path %></li>
+        <li><%= link_to t("Inventory"), inventory_items_path %></li>
+        <li><%= link_to t("Purchase orders"), purchase_orders_path %></li>
         <li><%= link_to "Locations", locations_path, aria: { current: controller_path == "locations" ? "page" : nil } %></li>
       </ul>
     </div>
@@ -23,6 +25,8 @@
       <li><%= link_to t("Orders"), service_orders_path %></li>
       <li><%= link_to t("Customers"), customers_path %></li>
       <li><%= link_to t("Vehicles"), vehicles_path %></li>
+      <li><%= link_to t("Inventory"), inventory_items_path %></li>
+      <li><%= link_to t("Purchase orders"), purchase_orders_path %></li>
       <li><%= link_to "Locations", locations_path, aria: { current: controller_path == "locations" ? "page" : nil } %></li>
     </ul>
   </div>
