@@ -86,6 +86,22 @@
       </div>
 
       <div class="space-y-6">
+        <section aria-labelledby="purchases-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+          <h2 id="purchases-heading" class="text-xl font-semibold">Related Purchase Orders</h2>
+          <p class="mt-1 text-sm text-base-content/60">Supplier purchases linked directly to this repair.</p>
+          <ul class="mt-4 space-y-4">
+            <% @purchase_orders.each do |purchase| %>
+              <li>
+                <%= link_to purchase[:number], purchase_orders_path(anchor: purchase[:number]), class: "link link-primary font-semibold" %>
+                <p class="mt-1 text-sm"><%= purchase[:supplier] %> · <%= purchase[:location] %></p>
+                <p class="mt-1 text-sm text-base-content/60"><%= purchase[:lines].map { |line| line[:name] }.join(", ") %></p>
+                <div class="mt-2 flex flex-wrap gap-2"><span class="badge <%= purchase[:badge] %>"><%= purchase[:status] %></span><% if purchase[:overdue] %><span class="badge badge-error">Delivery Overdue</span><% end %></div>
+                <p class="mt-2 text-sm">Purchase Value: <%= number_with_precision(purchase[:lines].sum { |line| line[:quantity] * line[:price] }, precision: 2, delimiter: ",") %> PLN</p>
+                <p class="mt-1 text-xs text-base-content/60">Delivery: <%= purchase[:expected] %> · Responsible: <%= purchase[:owner] %></p>
+              </li>
+            <% end %>
+          </ul>
+        </section>
         <section aria-labelledby="payments-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
           <div class="flex flex-wrap items-center gap-3"><h2 id="payments-heading" class="text-xl font-semibold">Payments</h2><span class="badge badge-warning">Partially Paid</span></div>
           <dl class="mt-4 space-y-3 text-sm">

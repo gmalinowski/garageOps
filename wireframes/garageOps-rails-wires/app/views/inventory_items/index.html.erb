@@ -1,0 +1,45 @@
+<% content_for :title, "Inventory — GarageOps" %>
+
+<div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div>
+    <div class="flex flex-wrap items-center gap-3"><h1 class="text-3xl font-bold">Inventory</h1><span class="badge badge-outline">Sample data</span></div>
+    <p class="mt-2 text-base-content/70">Parts, consumables and equipment across your organization's locations.</p>
+  </div>
+  <%= link_to "Purchase Orders", purchase_orders_path, class: "btn btn-outline" %>
+</div>
+
+<div class="mb-6 rounded-box border border-base-300 bg-base-200 p-4 text-sm">
+  Available = On Hand − Reserved. Incoming stock becomes available after receipt. Tools remain workshop equipment; checkout is not tracked in this preview.
+</div>
+
+<div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+  <table class="table">
+    <caption class="px-4 py-3 text-left text-sm text-base-content/70"><%= @inventory_items.size %> stock entries · All locations · Sample snapshot: 10 Sep 2026</caption>
+    <thead class="bg-base-200"><tr><th scope="col">Item</th><th scope="col">Category</th><th scope="col">Location</th><th scope="col">Unit</th><th scope="col" class="text-right">On Hand</th><th scope="col" class="text-right">Reserved</th><th scope="col" class="text-right">Available</th><th scope="col">Incoming</th></tr></thead>
+    <tbody>
+      <% @inventory_items.each do |item| %>
+        <tr class="hover:bg-base-200/50">
+          <th scope="row" class="min-w-44 font-normal">
+            <p class="font-semibold"><%= item[:name] %></p>
+            <p class="mt-1 font-mono text-xs text-base-content/60"><%= item[:sku] %></p>
+            <% if item[:order] %><%= link_to item[:order], service_order_path(item[:order]), class: "link link-primary mt-2 inline-block text-xs" %><% end %>
+          </th>
+          <td><span class="badge badge-outline whitespace-nowrap"><%= item[:category] %></span></td>
+          <td class="min-w-40"><%= item[:location] %><% if item[:storage] %><p class="mt-1 text-xs text-base-content/60"><%= item[:storage] %></p><% end %></td>
+          <td><%= item[:unit] %></td>
+          <td class="text-right tabular-nums"><%= item[:on_hand] %></td>
+          <% if item[:category] == "Tools & Equipment" %>
+            <td class="text-right text-base-content/60">N/A</td><td class="text-right text-base-content/60">N/A</td>
+          <% else %>
+            <td class="text-right tabular-nums"><%= item[:reserved] %></td>
+            <td class="text-right"><span class="badge tabular-nums <%= item[:on_hand] - item[:reserved] == 0 ? "badge-warning" : "badge-success" %>"><%= item[:on_hand] - item[:reserved] %></span></td>
+          <% end %>
+          <td class="min-w-36">
+            <span class="tabular-nums"><%= item[:incoming] %></span>
+            <% if item[:purchase] %><p class="mt-1"><%= link_to item[:purchase], purchase_orders_path(anchor: item[:purchase]), class: "link link-primary text-xs" %></p><% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

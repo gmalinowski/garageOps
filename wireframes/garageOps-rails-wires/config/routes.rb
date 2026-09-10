@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :vehicles
   resources :locations, only: :index
   resources :service_orders
+  resources :inventory_items
+  resources :purchase_orders
 
   namespace :settings do
     root "dashboard#index"
