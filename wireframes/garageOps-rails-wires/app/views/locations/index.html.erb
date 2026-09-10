@@ -1,0 +1,65 @@
+<% content_for :title, "Locations — GarageOps" %>
+
+<div class="mb-6">
+  <div class="flex flex-wrap items-center gap-3">
+    <h1 class="text-3xl font-bold">Locations</h1>
+    <span class="badge badge-outline">Sample data</span>
+  </div>
+  <p class="mt-2 text-base-content/70">Contact details and opening hours for all locations in your organization.</p>
+  <p class="mt-1 text-sm text-base-content/60">This directory always shows every location, regardless of the location selected above. Addresses and contact details are fictional.</p>
+</div>
+
+<div class="grid items-start gap-6 lg:grid-cols-2">
+  <% @locations.each_with_index do |location, index| %>
+    <article aria-labelledby="location-<%= index %>-heading" class="rounded-box border border-base-300 bg-base-100">
+      <div class="border-b border-base-300 p-6">
+        <h2 id="location-<%= index %>-heading" class="text-xl font-semibold"><%= location[:name] %></h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <% location[:services].each do |service| %>
+            <span class="badge badge-outline"><%= service %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="space-y-6 p-6">
+        <dl class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <dt class="text-sm font-medium text-base-content/60">Address</dt>
+            <dd class="mt-1">
+              <% location[:address].each do |line| %>
+                <span class="block"><%= line %></span>
+              <% end %>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-sm font-medium text-base-content/60">Contact</dt>
+            <dd class="mt-1"><%= location[:phone] %></dd>
+            <dd class="mt-1 break-all"><%= location[:email] %></dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="text-sm font-medium text-base-content/60">Location Manager</dt>
+            <dd class="mt-1"><%= location[:manager] %></dd>
+          </div>
+        </dl>
+
+        <div>
+          <h3 class="mb-2 font-semibold">Opening Hours</h3>
+          <p class="mb-2 text-xs text-base-content/60">Local time · Europe/Warsaw</p>
+          <dl class="divide-y divide-base-300">
+            <% location[:hours].each do |days, hours| %>
+              <div class="flex justify-between gap-4 py-2 text-sm">
+                <dt><%= days %></dt>
+                <dd class="whitespace-nowrap font-medium tabular-nums"><%= hours %></dd>
+              </div>
+            <% end %>
+          </dl>
+        </div>
+
+        <div class="rounded-box bg-base-200 p-4">
+          <h3 class="text-sm font-semibold">Arrival & Deliveries</h3>
+          <p class="mt-2 text-sm text-base-content/70"><%= location[:arrival_notes] %></p>
+        </div>
+      </div>
+    </article>
+  <% end %>
+</div>

@@ -1,8 +1,43 @@
 class ServiceOrdersController < ApplicationController
 
   def index
+    @service_orders = sample_service_orders
+  end
+
+  def new
+
+  end
+
+  def show
+    @order = sample_service_orders.find { |order| order[:number] == params[:id] }
+    raise ActiveRecord::RecordNotFound, "Service order not found" unless @order
+
+    if @order[:number] == "SO-2026-0104"
+      @work_items = [
+        { name: "Charging system diagnosis", labor: 150, status: "Done" },
+        { name: "Replace alternator", labor: 450, status: "To Do" },
+        { name: "Replace drive belt", labor: 150, status: "To Do" }
+      ]
+      @parts = [
+        { name: "Alternator", quantity: 1, total: 1450, status: "Ordered", delivery: "Expected 09 Sep · overdue" },
+        { name: "Drive belt", quantity: 1, total: 150, status: "Available", delivery: "At Central Workshop" }
+      ]
+      @labor_total = @work_items.sum { |item| item[:labor] }
+      @parts_total = @parts.sum { |part| part[:total] }
+      @order_total = @labor_total + @parts_total
+      @advance_payment = 500
+      @balance = @order_total - @advance_payment
+    end
+  end
+
+  def create
+
+  end
+  private
+
+  def sample_service_orders
     # Sample data for the wireframe; no database records are created.
-    @service_orders = [
+    [
       {
         number: "SO-2026-0108", customer: "James Wilson", vehicle: "Volvo V70", registration: "WX 4821K",
         issue: "Front suspension noise and ABS warning light", status: "Received", status_class: "badge-neutral",
@@ -44,13 +79,5 @@ class ServiceOrdersController < ApplicationController
         priority: "Low", advisor: "Alex Morgan", quoted_total: 520, completion_on: Date.new(2026, 9, 9)
       }
     ]
-  end
-
-  def new
-
-  end
-
-  def create
-
   end
 end

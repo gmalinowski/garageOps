@@ -9,7 +9,10 @@
     <p class="mt-2 text-base-content/70">Track each visit from intake and diagnosis to repair and collection.</p>
   </div>
 
-  <%= link_to "New Service Order", new_service_order_path, class: "btn btn-primary" %>
+  <div class="flex flex-wrap gap-2">
+    <%= link_to "View Example", service_order_path("SO-2026-0104"), class: "btn btn-outline" %>
+    <%= link_to "New Service Order", new_service_order_path, class: "btn btn-primary" %>
+  </div>
 </div>
 
 <div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
@@ -32,7 +35,7 @@
       <% @service_orders.each do |order| %>
         <tr id="<%= order[:number] %>" class="scroll-mt-6 hover:bg-base-200/50 target:bg-base-200">
           <th scope="row" class="min-w-64 font-normal">
-            <div class="font-semibold"><%= order[:number] %></div>
+            <div class="font-semibold"><%= link_to order[:number], service_order_path(order[:number]) %></div>
             <p class="mt-1 text-sm text-base-content/70"><%= order[:issue] %></p>
             <span class="badge badge-sm mt-2 <%= order[:priority] == "High" ? "badge-error" : "badge-ghost" %>">
               <%= order[:priority] %> priority

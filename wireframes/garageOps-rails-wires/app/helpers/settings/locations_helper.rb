@@ -1,0 +1,2 @@
+module Settings::LocationsHelper
+end

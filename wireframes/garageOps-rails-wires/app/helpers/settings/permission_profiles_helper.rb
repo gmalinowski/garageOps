@@ -1,0 +1,2 @@
+module Settings::PermissionProfilesHelper
+end

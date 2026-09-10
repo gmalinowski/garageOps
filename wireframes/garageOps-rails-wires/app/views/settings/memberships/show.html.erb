@@ -1,0 +1,111 @@
+<% content_for :title, "#{@membership[:name]} — Staff & Permissions — GarageOps" %>
+<%= render "settings/tabs" %>
+
+<div class="space-y-6 py-6">
+  <%= link_to "Back to Staff & Permissions", settings_memberships_path, class: "link link-primary text-sm" %>
+
+  <header>
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-bold"><%= @membership[:name] %></h1>
+      <span class="badge <%= @membership[:status] == "Active" ? "badge-success" : "badge-warning" %>"><%= @membership[:status] %></span>
+      <span class="badge badge-outline">Sample data</span>
+    </div>
+    <p class="mt-2 text-base-content/70"><%= @membership[:email] %></p>
+  </header>
+
+  <dl class="grid gap-4 md:grid-cols-3">
+    <div class="rounded-box border border-base-300 bg-base-100 p-5">
+      <dt class="text-sm text-base-content/60">Title</dt>
+      <dd class="mt-2 text-lg font-semibold"><%= @membership[:title] %></dd>
+      <dd class="mt-1 text-sm text-base-content/60">Descriptive only; grants no access.</dd>
+    </div>
+    <div class="rounded-box border border-base-300 bg-base-100 p-5">
+      <dt class="text-sm text-base-content/60">Initial Permission Profile</dt>
+      <dd class="mt-2 text-lg font-semibold"><%= @membership[:profile] %> v<%= @membership[:profile_version] %></dd>
+      <dd class="mt-1 text-sm text-base-content/60">Copied at setup; current permissions are independent.</dd>
+    </div>
+    <div class="rounded-box border border-base-300 bg-base-100 p-5">
+      <dt class="text-sm text-base-content/60">Member Since</dt>
+      <dd class="mt-2 text-lg font-semibold"><%= @membership[:joined] || "Not joined yet" %></dd>
+      <dd class="mt-1 text-sm text-base-content/60"><%= @membership[:status] == "Active" ? "Active organization membership." : "Access is inactive until the invitation is accepted." %></dd>
+    </div>
+  </dl>
+
+  <section aria-labelledby="access-heading" class="overflow-hidden rounded-box border border-base-300 bg-base-100">
+    <div class="border-b border-base-300 p-5">
+      <h2 id="access-heading" class="text-xl font-semibold"><%= @membership[:status] == "Active" ? "Current Permissions" : "Configured Permissions · Pending Activation" %></h2>
+      <p class="mt-2 text-sm text-base-content/70"><%= @membership[:notes] %></p>
+      <p class="mt-2 text-sm text-base-content/60">Each column is a location scope. No access is granted to unlisted locations. View access also applies to shared customer and vehicle history within the organization.</p>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table">
+        <caption class="sr-only">Operational permission grants by location</caption>
+        <thead class="bg-base-200">
+          <tr>
+            <th scope="col">Permission</th>
+            <% @membership[:locations].each do |location| %>
+              <th scope="col" class="text-center"><%= location[:name] %></th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <% @permission_labels.each do |key, label| %>
+            <tr data-permission="<%= key %>" class="hover:bg-base-200/50">
+              <th scope="row" class="font-normal"><%= label %></th>
+              <% @membership[:locations].each do |location| %>
+                <td class="text-center">
+                  <% if location[:permissions].include?(key) %>
+                    <span class="badge <%= @membership[:status] == "Active" ? "badge-success" : "badge-warning" %>"><%= @membership[:status] == "Active" ? "Granted" : "Pending" %></span>
+                  <% else %>
+                    <span class="text-sm text-base-content/60">Not granted</span>
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid items-start gap-6 lg:grid-cols-2">
+    <section aria-labelledby="organization-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+      <h2 id="organization-heading" class="text-xl font-semibold">Organization Permissions</h2>
+      <% if @membership[:organization_permissions].any? %>
+        <ul class="mt-4 space-y-2">
+          <% @membership[:organization_permissions].each do |permission| %>
+            <li><span class="badge badge-success mr-2">Granted</span><%= permission %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-3 text-sm text-base-content/70">No organization administration permissions granted.</p>
+      <% end %>
+    </section>
+
+    <section aria-labelledby="orders-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+      <h2 id="orders-heading" class="text-xl font-semibold">Assigned Service Orders</h2>
+      <p class="mt-1 text-sm text-base-content/60">Active orders this member coordinates as Advisor.</p>
+      <% if @membership[:orders].any? %>
+        <ul class="mt-4 space-y-3">
+          <% @membership[:orders].each do |order| %>
+            <li><%= link_to order[:number], service_orders_path(anchor: order[:number]), class: "link link-primary" %> · <%= order[:vehicle] %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p class="mt-4 text-sm text-base-content/70">No active orders assigned as Advisor.</p>
+      <% end %>
+    </section>
+  </div>
+
+  <section aria-labelledby="activity-heading" class="rounded-box border border-base-300 bg-base-100 p-5">
+    <h2 id="activity-heading" class="text-xl font-semibold">Access Activity</h2>
+    <ol class="mt-4 divide-y divide-base-300">
+      <% @membership[:activity].each do |event| %>
+        <li class="py-3 first:pt-0">
+          <p class="text-sm"><%= event[:detail] %></p>
+          <p class="mt-1 text-xs text-base-content/60"><%= event[:date] %> · <%= event[:actor] %></p>
+        </li>
+      <% end %>
+    </ol>
+  </section>
+</div>
