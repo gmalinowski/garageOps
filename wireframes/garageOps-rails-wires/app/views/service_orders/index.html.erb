@@ -1,0 +1,77 @@
+<% content_for :title, "Service Orders — GarageOps" %>
+
+<div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div>
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-bold">Service Orders</h1>
+      <span class="badge badge-outline">Sample data</span>
+    </div>
+    <p class="mt-2 text-base-content/70">Track each visit from intake and diagnosis to repair and collection.</p>
+  </div>
+
+  <%= link_to "New Service Order", new_service_order_path, class: "btn btn-primary" %>
+</div>
+
+<div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+  <table class="table">
+    <caption class="px-4 py-3 text-left text-sm text-base-content/70">
+      <%= @service_orders.size %> service orders · Amounts in PLN
+    </caption>
+    <thead class="bg-base-200">
+      <tr>
+        <th scope="col">Service Order</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Status</th>
+        <th scope="col">Assigned Advisor</th>
+        <th scope="col" class="text-right">Quoted Total</th>
+        <th scope="col">Target Completion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @service_orders.each do |order| %>
+        <tr id="<%= order[:number] %>" class="scroll-mt-6 hover:bg-base-200/50 target:bg-base-200">
+          <th scope="row" class="min-w-64 font-normal">
+            <div class="font-semibold"><%= order[:number] %></div>
+            <p class="mt-1 text-sm text-base-content/70"><%= order[:issue] %></p>
+            <span class="badge badge-sm mt-2 <%= order[:priority] == "High" ? "badge-error" : "badge-ghost" %>">
+              <%= order[:priority] %> priority
+            </span>
+          </th>
+          <td class="min-w-40"><%= order[:customer] %></td>
+          <td class="min-w-36">
+            <div class="font-medium"><%= order[:vehicle] %></div>
+            <div class="mt-1 font-mono text-xs text-base-content/70"><%= order[:registration] %></div>
+          </td>
+          <td>
+            <span class="badge whitespace-nowrap <%= order[:status_class] %>"><%= order[:status] %></span>
+          </td>
+          <td class="whitespace-nowrap">
+            <% if order[:advisor] %>
+              <%= order[:advisor] %>
+            <% else %>
+              <span class="text-base-content/60">Unassigned</span>
+            <% end %>
+          </td>
+          <td class="whitespace-nowrap text-right tabular-nums">
+            <% if order[:quoted_total] %>
+              <%= number_to_currency(order[:quoted_total], unit: "PLN", format: "%n %u", separator: ".", delimiter: ",") %>
+            <% else %>
+              <span class="text-base-content/60">Not quoted</span>
+            <% end %>
+          </td>
+          <td class="whitespace-nowrap">
+            <% if order[:completion_on] %>
+              <%= order[:completion_on].strftime("%d %b %Y") %>
+              <% if order[:status] == "Awaiting approval" %>
+                <div class="mt-1 text-xs text-base-content/60">Proposed · awaiting approval</div>
+              <% end %>
+            <% else %>
+              <span class="text-base-content/60">Not estimated</span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

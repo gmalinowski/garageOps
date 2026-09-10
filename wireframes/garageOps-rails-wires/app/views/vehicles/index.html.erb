@@ -1,0 +1,41 @@
+<% content_for :title, "Vehicles — GarageOps" %>
+
+<div class="mb-6">
+  <div class="flex flex-wrap items-center gap-3">
+    <h1 class="text-3xl font-bold">Vehicles</h1>
+    <span class="badge badge-outline">Sample data</span>
+  </div>
+  <p class="mt-2 text-base-content/70">Vehicles serviced by your workshop, their customers and latest visits.</p>
+</div>
+
+<div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+  <table class="table">
+    <caption class="px-4 py-3 text-left text-sm text-base-content/70">
+      <%= @vehicles.size %> vehicles · Mileage recorded at the latest intake
+    </caption>
+    <thead class="bg-base-200">
+      <tr>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Registration</th>
+        <th scope="col">Customer</th>
+        <th scope="col" class="text-right">Last Recorded Mileage</th>
+        <th scope="col">Latest Service Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vehicles.each do |vehicle| %>
+        <tr id="<%= vehicle[:id] %>" class="scroll-mt-6 hover:bg-base-200/50 target:bg-base-200">
+          <th scope="row" class="min-w-48 font-normal">
+            <div class="font-semibold"><%= vehicle[:name] %></div>
+            <div class="mt-1 text-sm text-base-content/70"><%= vehicle[:year] %> · <%= vehicle[:engine] %></div>
+            <div class="mt-1 text-xs text-base-content/60"><%= vehicle[:id] %></div>
+          </th>
+          <td class="whitespace-nowrap font-mono"><%= vehicle[:registration] %></td>
+          <td class="min-w-40"><%= link_to vehicle[:customer], customers_path(anchor: vehicle[:customer_id]), class: "link link-primary" %></td>
+          <td class="whitespace-nowrap text-right tabular-nums"><%= number_with_delimiter(vehicle[:mileage], delimiter: ",") %> km</td>
+          <td><%= link_to vehicle[:order], service_orders_path(anchor: vehicle[:order]), class: "link link-primary whitespace-nowrap" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

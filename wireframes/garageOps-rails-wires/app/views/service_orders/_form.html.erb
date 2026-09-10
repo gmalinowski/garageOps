@@ -1,0 +1,101 @@
+<%= form_with url: service_orders_path, scope: :service_order, method: :post, local: true, class: "space-y-6" do |form| %>
+  <p class="text-sm text-base-content/70">Pola oznaczone * są wymagane.</p>
+
+  <fieldset class="rounded-box border border-base-300 bg-base-100 p-6">
+    <legend class="px-2 text-lg font-semibold">1. Klient</legend>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="space-y-2 md:col-span-2">
+        <%= form.label :customer_name, "Imię i nazwisko lub nazwa firmy *", class: "block text-sm font-medium" %>
+        <%= form.text_field :customer_name, required: true, autocomplete: "name", placeholder: "np. Jan Kowalski", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :customer_phone, "Telefon *", class: "block text-sm font-medium" %>
+        <%= form.telephone_field :customer_phone, required: true, autocomplete: "tel", placeholder: "np. +48 600 100 200", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :customer_email, "E-mail", class: "block text-sm font-medium" %>
+        <%= form.email_field :customer_email, autocomplete: "email", placeholder: "np. jan@example.com", class: "input input-bordered w-full" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="rounded-box border border-base-300 bg-base-100 p-6">
+    <legend class="px-2 text-lg font-semibold">2. Samochód</legend>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="space-y-2">
+        <%= form.label :registration_number, "Numer rejestracyjny *", class: "block text-sm font-medium" %>
+        <%= form.text_field :registration_number, required: true, placeholder: "np. WX 12345", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :vin, "VIN", class: "block text-sm font-medium" %>
+        <%= form.text_field :vin, maxlength: 17, placeholder: "17 znaków", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :vehicle_make, "Marka *", class: "block text-sm font-medium" %>
+        <%= form.text_field :vehicle_make, required: true, placeholder: "np. Volvo", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :vehicle_model, "Model *", class: "block text-sm font-medium" %>
+        <%= form.text_field :vehicle_model, required: true, placeholder: "np. V70", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :engine, "Silnik", class: "block text-sm font-medium" %>
+        <%= form.text_field :engine, placeholder: "np. 2.0 D4, diesel", class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :mileage, "Przebieg przy przyjęciu (km) *", class: "block text-sm font-medium" %>
+        <%= form.number_field :mileage, required: true, min: 0, step: 1, placeholder: "np. 185000", class: "input input-bordered w-full" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="rounded-box border border-base-300 bg-base-100 p-6">
+    <legend class="px-2 text-lg font-semibold">3. Zgłoszenie</legend>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      <div class="space-y-2 md:col-span-2">
+        <%= form.label :reported_issue, "Opis problemu i zakres zlecenia *", class: "block text-sm font-medium" %>
+        <%= form.text_area :reported_issue, required: true, rows: 4, placeholder: "np. Stuki z przodu na nierównościach, świeci kontrolka ABS. Klient prosi również o wymianę oleju i filtra.", class: "textarea textarea-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :priority, "Priorytet", class: "block text-sm font-medium" %>
+        <%= form.select :priority, [["Niski", "low"], ["Normalny", "normal"], ["Pilny", "urgent"]], { selected: "normal" }, class: "select select-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2">
+        <%= form.label :expected_pickup_on, "Uzgodniony termin odbioru", class: "block text-sm font-medium" %>
+        <%= form.date_field :expected_pickup_on, class: "input input-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2 md:col-span-2">
+        <%= form.label :intake_notes, "Uwagi przy przyjęciu", class: "block text-sm font-medium" %>
+        <%= form.text_area :intake_notes, rows: 3, placeholder: "np. Rysa na tylnym zderzaku, przekazano jeden kluczyk. Przed rozszerzeniem zakresu naprawy skontaktować się z klientem.", class: "textarea textarea-bordered w-full" %>
+      </div>
+
+      <div class="space-y-2 md:col-span-2">
+        <%= form.label :photos, "Zdjęcia samochodu i uszkodzeń", class: "block text-sm font-medium" %>
+        <%= form.file_field :photos, multiple: true, accept: "image/*", aria: { describedby: "photos-hint" }, class: "file-input file-input-bordered w-full" %>
+        <p id="photos-hint" class="text-sm text-base-content/70">Możesz wybrać kilka zdjęć dokumentujących stan auta przy przyjęciu.</p>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="flex flex-col gap-4 border-t border-base-300 pt-6 sm:flex-row sm:items-center sm:justify-between">
+    <p class="text-sm text-base-content/70">Status początkowy: <span class="badge badge-outline">Przyjęte</span></p>
+
+    <div class="flex flex-wrap gap-3">
+      <%= link_to "Anuluj", dashboard_home_path, class: "btn btn-ghost" %>
+      <%= form.submit "Przyjmij zlecenie", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

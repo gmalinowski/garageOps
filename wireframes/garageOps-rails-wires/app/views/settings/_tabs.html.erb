@@ -1,0 +1,10 @@
+<nav class="tabs tabs-lift" aria-label="Settings">
+  <% [
+       ["Settings", settings_root_path, "settings/dashboard"],
+       ["Employees", settings_memberships_path, "settings/memberships"],
+     ].each do |label, path, controller| %>
+  <% active = controller_path == controller %>
+
+    <%= link_to label, path, class: class_names("tab", "tab-active" => active), aria: {current: active ? "page" : nil} %>
+  <% end %>
+</nav>

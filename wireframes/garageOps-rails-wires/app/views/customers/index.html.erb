@@ -1,0 +1,49 @@
+<% content_for :title, "Customers — GarageOps" %>
+
+<div class="mb-6">
+  <div class="flex flex-wrap items-center gap-3">
+    <h1 class="text-3xl font-bold">Customers</h1>
+    <span class="badge badge-outline">Sample data</span>
+  </div>
+  <p class="mt-2 text-base-content/70">Customer contacts, linked vehicles and their latest service orders.</p>
+</div>
+
+<div class="overflow-x-auto rounded-box border border-base-300 bg-base-100">
+  <table class="table">
+    <caption class="px-4 py-3 text-left text-sm text-base-content/70">
+      <%= @customers.size %> customers · Fictional contact details
+    </caption>
+    <thead class="bg-base-200">
+      <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Type</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Latest Service Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr id="<%= customer[:id] %>" class="scroll-mt-6 hover:bg-base-200/50 target:bg-base-200">
+          <th scope="row" class="min-w-48 font-normal">
+            <div class="font-semibold"><%= customer[:name] %></div>
+            <div class="mt-1 text-xs text-base-content/60"><%= customer[:id] %></div>
+          </th>
+          <td><span class="badge <%= customer[:kind] == "Company" ? "badge-info" : "badge-ghost" %>"><%= customer[:kind] %></span></td>
+          <td>
+            <% if customer[:contact] %>
+              <p class="mb-1 text-sm font-medium"><%= customer[:contact] %></p>
+            <% end %>
+            <p class="whitespace-nowrap"><%= customer[:phone] %></p>
+            <p class="mt-1 text-sm text-base-content/70"><%= customer[:email] %></p>
+          </td>
+          <td class="min-w-36">
+            <%= link_to customer[:vehicle], vehicles_path(anchor: customer[:vehicle_id]), class: "link link-primary" %>
+            <div class="mt-1 font-mono text-xs text-base-content/60"><%= customer[:registration] %></div>
+          </td>
+          <td><%= link_to customer[:order], service_orders_path(anchor: customer[:order]), class: "link link-primary whitespace-nowrap" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

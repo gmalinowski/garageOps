@@ -1,0 +1,104 @@
+<% content_for :title, "Dashboard — GarageOps" %>
+
+<div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div>
+    <div class="flex flex-wrap items-center gap-3">
+      <h1 class="text-3xl font-bold">Dashboard</h1>
+      <span class="badge badge-outline">Sample data</span>
+    </div>
+    <p class="mt-2 text-base-content/70">Your workshop at a glance — priorities, work and upcoming collections.</p>
+    <p class="mt-1 text-sm text-base-content/60">Sample snapshot: <%= @snapshot_date.strftime("%A, %d %B %Y") %> · 10:30</p>
+  </div>
+  <%= link_to "New Service Order", new_service_order_path, class: "btn btn-primary" %>
+</div>
+
+<section aria-label="Workshop Overview" class="mb-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+  <% @workshop_stats.each do |stat| %>
+    <div class="rounded-box border border-base-300 bg-base-100 p-5">
+      <h2 class="text-sm font-medium text-base-content/70"><%= stat[:label] %></h2>
+      <p class="mt-2 text-4xl font-bold tabular-nums"><%= stat[:value] %></p>
+      <p class="mt-2 text-sm text-base-content/60"><%= stat[:detail] %></p>
+    </div>
+  <% end %>
+</section>
+
+<div class="grid items-start gap-6 xl:grid-cols-3">
+  <section aria-labelledby="attention-heading" class="rounded-box border border-base-300 bg-base-100 xl:col-span-2">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-base-300 p-5">
+      <h2 id="attention-heading" class="text-xl font-semibold">Needs Attention</h2>
+      <span class="badge badge-warning"><%= @attention_items.size %> items</span>
+    </div>
+    <ul class="divide-y divide-base-300">
+      <% @attention_items.each do |item| %>
+        <li class="p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold"><%= item[:vehicle] %> <span class="font-normal text-base-content/60">· <%= item[:number] %></span></h3>
+            <span class="badge h-auto min-h-6 <%= item[:badge_class] %>"><%= item[:label] %></span>
+          </div>
+          <p class="mt-1 text-sm text-base-content/60"><%= item[:customer] %> · Advisor: <%= item[:advisor] %></p>
+          <p class="mt-3 text-sm"><%= item[:detail] %></p>
+          <%= link_to "View in Service Orders", service_orders_path(anchor: item[:number]), class: "link link-primary mt-3 inline-block text-sm", aria: { label: "View #{item[:number]} in Service Orders" } %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section aria-labelledby="collections-heading" class="rounded-box border border-base-300 bg-base-100">
+    <div class="border-b border-base-300 p-5">
+      <h2 id="collections-heading" class="text-xl font-semibold">Upcoming Collections</h2>
+      <p class="mt-1 text-sm text-base-content/60">Agreed pickups for today and tomorrow.</p>
+    </div>
+    <ul class="divide-y divide-base-300">
+      <% @upcoming_collections.each do |collection| %>
+        <li class="p-5">
+          <p class="text-sm font-semibold"><%= collection[:time] %></p>
+          <h3 class="mt-2 font-semibold"><%= collection[:vehicle] %></h3>
+          <p class="mt-1 text-sm text-base-content/60"><%= collection[:customer] %></p>
+          <%= link_to collection[:number], service_orders_path(anchor: collection[:number]), class: "link link-primary mt-1 inline-block text-sm" %>
+          <div class="mt-3"><span class="badge <%= collection[:badge_class] %>"><%= collection[:status] %></span></div>
+          <p class="mt-2 text-sm text-base-content/70"><%= collection[:detail] %></p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section aria-labelledby="work-heading" class="min-w-0 rounded-box border border-base-300 bg-base-100 xl:col-span-3">
+    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-base-300 p-5">
+      <div>
+        <h2 id="work-heading" class="text-xl font-semibold">Today's Work</h2>
+        <p class="mt-1 text-sm text-base-content/60">Scheduled task times, separate from vehicle collection dates.</p>
+      </div>
+      <%= link_to "All Service Orders", service_orders_path, class: "btn btn-ghost btn-sm" %>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table">
+        <caption class="sr-only">Today's scheduled workshop tasks</caption>
+        <thead class="bg-base-200">
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Service Order</th>
+            <th scope="col">Task</th>
+            <th scope="col">Mechanic</th>
+            <th scope="col">Work Bay</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @todays_tasks.each do |task| %>
+            <tr class="hover:bg-base-200/50">
+              <td class="whitespace-nowrap tabular-nums"><%= task[:time] %></td>
+              <th scope="row" class="font-normal">
+                <%= link_to task[:number], service_orders_path(anchor: task[:number]), class: "link link-primary whitespace-nowrap" %>
+                <p class="mt-1 text-sm text-base-content/60"><%= task[:vehicle] %></p>
+              </th>
+              <td class="min-w-48"><%= task[:task] %></td>
+              <td class="whitespace-nowrap"><%= task[:mechanic] %></td>
+              <td class="whitespace-nowrap"><%= task[:bay] %></td>
+              <td><span class="badge whitespace-nowrap <%= task[:badge_class] %>"><%= task[:status] %></span></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
