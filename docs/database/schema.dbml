@@ -1,0 +1,476 @@
+Project garageOps {
+  database_type: "postgresql"
+  Note: "This is a DBML file for the garageOps project. It defines the database schema, including tables, relationships, and constraints."
+}
+
+Table users {
+  id bigint [pk, increment]
+  email string [not null, unique]
+}
+
+Table profiles {
+  id bigint [pk, increment]
+  name string [not null]
+  last_name string
+  phone string [unique]
+  info string
+  avatar string
+  user_id bigint [unique, not null, ref: - users.id]
+}
+
+Table organizations {
+  id bigint [pk, increment]
+  name string [not null, unique]
+  slug string [not null, unique]
+  description string
+}
+
+Table memberships {
+  id bigint [pk, increment]
+  user_id bigint [not null, ref: > users.id]
+  organization_id bigint [not null, ref: > organizations.id]
+  title text
+  status varchar [not null]
+
+  indexes {
+    (user_id, organization_id) [unique]
+  }
+}
+
+Table locations {
+  id bigint [pk, increment]
+  name string [not null]
+  description string
+  phone string [not null]
+  email string [not null]
+  address_line1 string [not null]
+  address_line2 string
+  postal_code string [not null]
+  city string [not null]
+  country_code string [not null]
+  organization_id bigint [not null, ref: > organizations.id]
+
+  indexes {
+    (organization_id, name) [unique]
+  }
+}
+
+Table membership_locations {
+  id bigint [pk, increment]
+  membership_id bigint [not null, ref: > memberships.id]
+  location_id bigint [not null, ref: > locations.id]
+
+  indexes {
+    (membership_id, location_id) [unique]
+  }
+}
+
+Table permissions {
+  id bigint [pk, increment]
+  key string [not null, unique]
+  name string [not null, unique]
+  description string
+}
+
+Table membership_permissions {
+  id bigint [pk, increment]
+  membership_id bigint [not null, ref: > memberships.id]
+  permission_id bigint [not null, ref: > permissions.id]
+  scope_type string [not null, default: "location"]
+  location_id bigint [ref: > locations.id]
+
+  // checks {
+  //   `(scope_type = 'location' AND location_id IS NOT NULL) OR (scope_type = 'organization' AND location_id IS NULL)` [name: 'valid_permission_scope']
+  // }
+
+  Note: '''
+  Unique grants:
+  - location: (membership_id, permission_id, location_id)
+  - organization: (membership_id, permission_id)
+
+  Enforced using partial unique indexes in migrations.
+'''
+}
+
+Table permission_profiles {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  name string [not null]
+  description string
+
+  indexes {
+    (organization_id, name) [unique]
+  }
+}
+
+Table permission_profile_permissions {
+  id bigint [pk, increment]
+  permission_profile_id bigint [not null, ref: > permission_profiles.id]
+  permission_id bigint [not null, ref: > permissions.id]
+  default_scope_type string [not null, default: "location"]
+  indexes {
+    (permission_profile_id, permission_id) [unique]
+  }
+}
+
+// --------- SERVICE ESTIMATES
+
+Table service_order_estimates {
+  id bigint [pk, increment]
+  service_order_id bigint [not null, ref: > service_orders.id]
+  prepared_by_membership_id bigint [not null, ref: > memberships.id]
+  revises_estimate_id bigint [ref: > service_order_estimates.id]
+
+  estimate_number integer [not null]
+  status string [not null, default: 'draft']
+  currency string [not null, default: 'PLN']
+  notes text
+  presented_at timestamp
+
+  indexes {
+    (service_order_id, estimate_number) [unique]
+  }
+}
+
+Table service_order_estimate_work_items {
+  id bigint [pk, increment]
+  service_order_estimate_id bigint [not null, ref: > service_order_estimates.id]
+
+  name string [not null]
+  description text
+  labor_price_net decimal(18,4)
+  position integer [not null, default: 0]
+}
+
+Table service_order_estimate_parts {
+  id bigint [pk, increment]
+  service_order_estimate_work_item_id bigint [not null, ref: > service_order_estimate_work_items.id]
+  inventory_item_id bigint [ref: > inventory_items.id]
+
+  source string [not null, default: 'inventory']
+  name string [not null]
+  requirements text
+
+  quantity decimal(18,4) [not null]
+  unit string [not null]
+  unit_sale_price_net decimal(18,4)
+  position integer [not null, default: 0]
+}
+
+Table service_order_estimate_decisions {
+  id bigint [pk, increment]
+  service_order_estimate_work_item_id bigint [not null, unique, ref: > service_order_estimate_work_items.id]
+  recorded_by_membership_id bigint [not null, ref: > memberships.id]
+  decision string [not null]
+  channel string [not null]
+  contact_name string [not null]
+  contact_phone string
+  contact_email string
+  decided_at timestamp [not null, default: `now()`]
+  notes text
+}
+
+// --------- SERVICE ORDERS
+
+Table service_orders {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  location_id bigint [not null, ref: > locations.id]
+  customer_id bigint [not null, ref: > customers.id]
+  vehicle_id bigint [not null, ref: > vehicles.id]
+  advisor_membership_id bigint [ref: > memberships.id]
+
+  order_number string [not null]
+  status string [not null, default: 'received']
+  priority string [not null, default: 'normal']
+  currency string [not null, default: 'PLN']
+
+  reported_issue text [not null]
+  intake_notes text
+  mileage_at_intake decimal(18,4)
+  mileage_unit string [not null, default: 'km']
+  registration_number_at_intake string
+  preferred_collection_on date
+
+  contact_name string
+  contact_phone string
+  contact_email string
+  contact_notes text
+
+  diagnostic_notes text
+  proposed_completion_on date
+  agreed_completion_on date
+
+
+  vehicle_received_at timestamp
+  vehicle_collected_at timestamp
+  completed_at timestamp
+  cancelled_at timestamp
+
+  outcome string
+
+  indexes {
+    (organization_id, order_number) [unique]
+  }
+}
+
+Table service_order_reports {
+  id bigint [pk, increment]
+  service_order_id bigint [not null, unique, ref: > service_orders.id]
+  author_membership_id bigint [not null, ref: > memberships.id]
+  summary text
+  recommendations text
+  finalized_at timestamp
+}
+
+Table service_order_work_items {
+  id bigint [pk, increment]
+  service_order_id bigint [not null, ref: > service_orders.id]
+  service_order_estimate_work_item_id bigint [not null, unique, ref: > service_order_estimate_work_items.id]
+  name string [not null]
+  description text
+  labor_price_net decimal(18,4) [not null]
+  status string [not null, default: 'pending']
+  position integer [not null, default: 0]
+  completion_notes text
+  started_at timestamp
+  completed_at timestamp
+
+}
+
+Table service_order_parts {
+  id bigint [pk, increment]
+  service_order_work_item_id bigint [not null, ref: > service_order_work_items.id]
+  service_order_estimate_part_id bigint [not null, unique, ref: > service_order_estimate_parts.id]
+  inventory_item_id bigint [ref: > inventory_items.id]
+
+  source string [not null, default: 'inventory']
+  name string [not null]
+  requirements text
+
+  quantity decimal(18,4) [not null]
+  unit string [not null]
+  unit_sale_price_net decimal(18,4) [not null]
+
+  customer_quantity_received decimal(18,4) [not null, default: 0]
+  customer_received_at timestamp
+  receipt_notes text
+
+}
+
+Table service_order_part_allocations {
+  id bigint [pk, increment]
+  service_order_part_id bigint [not null, ref: > service_order_parts.id]
+  inventory_batch_id bigint [not null, ref: > inventory_batches.id]
+  quantity decimal(18,4) [not null]
+  status string [not null, default: 'reserved']
+  reserved_at timestamp [not null, default: `now()`]
+  issued_at timestamp
+  released_at timestamp
+
+  indexes {
+    (service_order_part_id, status)
+    (inventory_batch_id, status)
+  }
+}
+
+Table vehicles {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  customer_id bigint [not null, ref: > customers.id]
+
+  registration_number string
+  registration_country_code string
+  vin string [not null]
+  first_registration_on date
+  make string [not null]
+  model string [not null]
+  generation string
+  production_year integer
+  engine_capacity_cc integer
+  engine_power_kw integer
+  engine_code string
+  transmission_type string
+  gearbox_code string
+  fuel_type string
+  notes text
+
+  indexes {
+      (organization_id, vin) [unique]
+    }
+}
+
+Enum customer_type {
+  individual
+  company
+}
+
+Table customers {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  customer_type customer_type [not null, default: 'individual']
+
+  first_name string
+  last_name string
+
+  company_name string
+
+  notes string
+
+  email string
+  phone string
+  address_line1 string
+  address_line2 string
+  postal_code string
+  city string
+  country_code string
+}
+
+// --------- ORDER SETTLEMENT
+
+Table service_order_settlements {
+  id bigint [pk, increment]
+  service_order_id bigint [not null, unique, ref: > service_orders.id]
+  prepared_by_membership_id bigint [not null, ref: > memberships.id]
+
+  status string [not null, default: 'draft']
+  currency string [not null, default: 'PLN']
+  notes text
+
+  agreed_at timestamp
+  agreement_channel string
+  agreement_contact_name string
+  agreement_notes text
+  agreement_recorded_by_membership_id bigint [ref: > memberships.id]
+
+  finalized_at timestamp
+}
+
+Table service_order_settlement_items {
+  id bigint [pk, increment]
+  service_order_settlement_id bigint [not null, ref: > service_order_settlements.id]
+  service_order_work_item_id bigint [ref: > service_order_work_items.id]
+  service_order_part_id bigint [ref: > service_order_parts.id]
+
+  item_type string [not null]
+  name string [not null]
+  description text
+  quantity decimal(18, 4) [not null]
+  unit string [not null]
+  unit_price_net decimal(18,4) [not null]
+  position integer [not null, default: 0]
+
+  checks {
+    `(
+      item_type = 'labor'
+      AND service_order_work_item_id IS NOT NULL
+      AND service_order_part_id IS NULL
+    ) OR (
+      item_type = 'part'
+      AND service_order_part_id IS NOT NULL
+      AND service_order_work_item_id IS NULL
+    )` [name: 'settlement_item_valid_source']
+  }
+}
+
+// --------- INVENTORY
+
+Table inventory_categories {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  name string [not null]
+  description string
+
+  indexes {
+    (organization_id, name) [unique]
+  }
+}
+
+Table manufacturers {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  name string [not null]
+  description string
+
+  indexes {
+    (organization_id, name) [unique]
+  }
+}
+
+Table inventory_items {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  inventory_category_id bigint [not null, ref: > inventory_categories.id]
+  manufacturer_id bigint [not null, ref: > manufacturers.id]
+  part_number string
+  name string [not null]
+  description string
+  unit string [not null]
+
+  indexes {
+    (organization_id, manufacturer_id, part_number) [unique]
+  }
+}
+
+Table inventory_stocks {
+  id bigint [pk, increment]
+  inventory_item_id bigint [not null, ref: > inventory_items.id]
+  location_id bigint [not null, ref: > locations.id]
+
+  indexes {
+    (inventory_item_id, location_id) [unique]
+  }
+}
+
+Table inventory_batches {
+  id bigint [pk, increment]
+  inventory_stock_id bigint [not null, ref: > inventory_stocks.id]
+  purchase_order_item_id bigint [ref: > purchase_order_items.id]
+  quantity_received decimal(18,4) [not null]
+  quantity_remaining decimal(18,4) [not null]
+  unit_purchase_price_net decimal(18,4) [not null]
+  currency string [not null, default: 'PLN']
+  received_at timestamp [not null, default: `now()`]
+}
+
+Table purchase_orders {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  location_id bigint [not null, ref: > locations.id]
+  supplier_id bigint [not null, ref: > suppliers.id]
+  order_number string [not null]
+  status string [not null, default: 'draft']
+  currency string [not null, default: 'PLN']
+  ordered_at timestamp
+  expected_delivery_on date
+  notes text
+
+  indexes {
+    (organization_id, order_number) [unique]
+  }
+}
+
+Table purchase_order_items {
+  id bigint [pk, increment]
+  purchase_order_id bigint [not null, ref: > purchase_orders.id]
+  inventory_item_id bigint [not null, ref: > inventory_items.id]
+  quantity integer [not null]
+  purchase_unit string [not null]
+  stock_units_per_purchase_unit decimal(18,4) [not null]
+  unit_purchase_price_net decimal(18,4) [not null]
+}
+
+
+Table suppliers {
+  id bigint [pk, increment]
+  organization_id bigint [not null, ref: > organizations.id]
+  name string [not null]
+  email string
+  phone string
+  address_line1 string
+  address_line2 string
+  postal_code string
+  city string
+  country_code string
+  currency string [not null, default: 'PLN']
+}

@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   def index
     # Sample data for the wireframe; no database records are created.
     @customers = [
-      { id: "CUST-001", name: "James Wilson", kind: "Individual", email: "james.wilson@example.com", phone: "+48 000 000 101", vehicle: "Volvo V70", registration: "WX 4821K", vehicle_id: "VEH-001", order: "SO-2026-0108" },
+       { id: "CUST-001", name: "James Wilson", kind: "Individual", email: "james.wilson@example.com", phone: "+48 000 000 101", vehicle: "Volvo V70", registration: "WX 4821K", vehicle_id: "VEH-001", order: "SO-2026-0108" },
       { id: "CUST-002", name: "Emma Taylor", kind: "Individual", email: "emma.taylor@example.com", phone: "+48 000 000 102", vehicle: "Toyota Yaris", registration: "WA 7392P", vehicle_id: "VEH-002", order: "SO-2026-0107" },
       { id: "CUST-003", name: "Oliver Brown", kind: "Individual", email: "oliver.brown@example.com", phone: "+48 000 000 103", vehicle: "BMW 320d", registration: "WU 1058C", vehicle_id: "VEH-003", order: "SO-2026-0106" },
       { id: "CUST-004", name: "Sophie Martin", kind: "Individual", email: "sophie.martin@example.com", phone: "+48 000 000 104", vehicle: "Volkswagen Golf", registration: "WE 6214N", vehicle_id: "VEH-004", order: "SO-2026-0105" },
