@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/car_forge" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/wireframes/garageOps-rails-wires" vcs="Git" />
   </component>
 </project>
