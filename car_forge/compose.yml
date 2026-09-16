@@ -1,0 +1,19 @@
+name: car-forge
+
+services:
+  db:
+    image: docker.io/library/postgres:18-bookworm
+
+    environment:
+      POSTGRES_USER: car_forge
+      POSTGRES_PASSWORD: car_forge_dev
+      POSTGRES_DB: car_forge_development
+
+    ports:
+      - "0.0.0.0:5433:5432"
+
+    volumes:
+        - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
