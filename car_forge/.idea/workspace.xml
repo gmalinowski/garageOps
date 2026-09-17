@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c405a786-695d-48d6-91dc-98f155d3c65e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/database.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/controllers/settings/base_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/views/settings/profiles/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../test/fixtures/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../test/fixtures/users.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
