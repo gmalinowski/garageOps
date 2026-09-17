@@ -49,3 +49,9 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+# Repository documentation, prototypes and local editor files.
+/docs/
+/wireframes/
+/.idea/
+/.ruby-lsp/
