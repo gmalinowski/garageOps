@@ -15,6 +15,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  password: car_forge_dev
+  username: car_forge
+  host: localhost
+  port: 5433
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -23,10 +27,6 @@ default: &default
 development:
   <<: *default
   database: car_forge_development
-  password: car_forge_dev
-  username: car_forge
-  host: localhost
-  port: 5433
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
