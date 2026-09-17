@@ -1,0 +1,166 @@
+/* app/assets/stylesheets/settings/tokens.css */
+
+@layer tokens {
+    /*
+     * Domyślnie używamy ustawienia systemowego.
+     * Przeglądarka sama wybiera light albo dark.
+     */
+    :root {
+        color-scheme: light dark;
+
+        /* Typography */
+        --font-family-sans:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
+
+        --line-height-tight: 1.25;
+        --line-height-normal: 1.5;
+
+        /* Spacing */
+        --space-0: 0;
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+
+        /* Borders */
+        --border-width: 1px;
+
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-full: 9999px;
+
+        /* Layout */
+        --sidebar-width: 16rem;
+        --header-height: 4rem;
+        --content-max-width: 90rem;
+
+        /* Backgrounds */
+        --color-background: light-dark(#f4f6f8, #101318);
+        --color-surface: light-dark(#ffffff, #191d24);
+        --color-surface-raised: light-dark(#ffffff, #20252d);
+        --color-surface-muted: light-dark(#f0f2f5, #252b35);
+        --color-surface-hover: light-dark(#e9edf2, #2b323d);
+        --color-surface-selected: light-dark(#dbeafe, #172b4d);
+
+        /* Text */
+        --color-text: light-dark(#1f2937, #f1f5f9);
+        --color-text-muted: light-dark(#64748b, #94a3b8);
+        --color-text-subtle: light-dark(#94a3b8, #64748b);
+        --color-text-inverse: light-dark(#ffffff, #111827);
+
+        /* Borders */
+        --color-border: light-dark(#d8dee6, #343b46);
+        --color-border-strong: light-dark(#aeb8c5, #505968);
+
+        /* Brand */
+        --color-primary: light-dark(#2563eb, #60a5fa);
+        --color-primary-hover: light-dark(#1d4ed8, #93c5fd);
+        --color-primary-active: light-dark(#1e40af, #3b82f6);
+        --color-primary-contrast: light-dark(#ffffff, #0f172a);
+
+        /* Statuses */
+        --color-success: light-dark(#15803d, #4ade80);
+        --color-success-surface: light-dark(#dcfce7, #142d20);
+        --color-success-border: light-dark(#86efac, #27643c);
+
+        --color-warning: light-dark(#b45309, #fbbf24);
+        --color-warning-surface: light-dark(#fef3c7, #34260f);
+        --color-warning-border: light-dark(#fcd34d, #70520f);
+
+        --color-danger: light-dark(#dc2626, #f87171);
+        --color-danger-surface: light-dark(#fee2e2, #38191b);
+        --color-danger-border: light-dark(#fca5a5, #743235);
+
+        --color-info: light-dark(#0369a1, #38bdf8);
+        --color-info-surface: light-dark(#e0f2fe, #102d3d);
+        --color-info-border: light-dark(#7dd3fc, #235c77);
+
+        /* Forms */
+        --color-input-background: light-dark(#ffffff, #15191f);
+        --color-input-border: light-dark(#cbd5e1, #414a58);
+        --color-input-placeholder: light-dark(#94a3b8, #64748b);
+        --color-input-disabled: light-dark(#e9edf2, #252a32);
+
+        /* Focus */
+        --color-focus-ring: light-dark(#3b82f6, #60a5fa);
+        --focus-ring:
+                0 0 0 3px
+                light-dark(
+                        rgb(59 130 246 / 25%),
+                        rgb(96 165 250 / 35%)
+                );
+
+        /* Shadows */
+        --shadow-sm:
+                0 1px 2px
+                light-dark(
+                        rgb(15 23 42 / 8%),
+                        rgb(0 0 0 / 25%)
+                );
+
+        --shadow-md:
+                0 4px 12px
+                light-dark(
+                        rgb(15 23 42 / 12%),
+                        rgb(0 0 0 / 35%)
+                );
+
+        --shadow-lg:
+                0 12px 28px
+                light-dark(
+                        rgb(15 23 42 / 16%),
+                        rgb(0 0 0 / 45%)
+                );
+
+        /* Overlay */
+        --color-overlay: light-dark(
+                rgb(15 23 42 / 45%),
+                rgb(0 0 0 / 65%)
+        );
+
+        /* Transitions */
+        --transition-fast: 120ms ease;
+        --transition-normal: 200ms ease;
+
+        /* Layers */
+        --z-dropdown: 100;
+        --z-sticky: 200;
+        --z-modal-backdrop: 900;
+        --z-modal: 1000;
+        --z-toast: 1100;
+    }
+
+    /* Użytkownik ręcznie wybrał jasny */
+    :root[data-theme="light"] {
+        color-scheme: light;
+    }
+
+    /* Użytkownik ręcznie wybrał ciemny */
+    :root[data-theme="dark"] {
+        color-scheme: dark;
+    }
+}
