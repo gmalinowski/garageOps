@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "home" => "pages#home", as: :home
 
+  resource :dashboard, only: :show
+
   namespace :settings do
     resource :profile, only: %i[edit update]
   end

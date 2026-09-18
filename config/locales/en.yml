@@ -28,4 +28,12 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  shared:
+    public_navbar:
+      home: "Home"
+      sign_in: "Log in"
+      dashboard: "Dashboard"
+      my_profile: "My profile"
+      home_label: "CarForge home"
+      navigation_label: "Main navigation"
+      skip_to_content: "Skip to content"

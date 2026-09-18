@@ -1,0 +1,5 @@
+.public-content {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 4rem);
+}

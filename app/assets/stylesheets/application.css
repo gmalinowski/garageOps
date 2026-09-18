@@ -13,6 +13,8 @@
 
 @layer tokens, reset, base, layouts, components, pages, utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 /* Design tokens */
 @import url("settings/tokens.css") layer(tokens);
 
@@ -25,12 +27,14 @@
 @import url("base/forms.css") layer(base);
 
 /* Layouts */
+@import url("layouts/public.css") layer(layouts);
 @import url("layouts/app_shell.css") layer(layouts);
 @import url("layouts/header.css") layer(layouts);
 @import url("layouts/sidebar.css") layer(layouts);
 @import url("layouts/content.css") layer(layouts);
 
 /* Components */
+@import url("components/public_navbar.css") layer(components);
 
 /* Pages */
 
