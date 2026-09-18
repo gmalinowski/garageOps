@@ -1,0 +1,9 @@
+<% content_for :layout_content do %>
+  <%= render "shared/public_navbar" %>
+
+  <main id="main-content" class="public-content" tabindex="-1">
+    <%= yield %>
+  </main>
+<% end %>
+
+<%= render template: "layouts/application" %>

@@ -1,0 +1,44 @@
+<header class="public-header">
+  <a class="public-header__skip" href="#main-content">Skip to content</a>
+
+  <nav class="public-navbar" aria-label="Main navigation">
+    <%= link_to root_path, class: "public-navbar__brand", aria: { label: "CarForge home" } do %>
+      <span class="public-navbar__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none">
+          <path d="M21 9H12L5 20l7 11h9l-7-11 7-11Z" fill="currentColor" />
+          <path d="M24 9h12l-4 7h-8v4h8l-4 7h-4v4h-7V20l7-11Z" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="public-navbar__wordmark">CAR<span>FORGE</span><span class="public-navbar__brand-dot" aria-hidden="true">✳</span></span>
+    <% end %>
+
+    <span class="public-navbar__descriptor" aria-hidden="true">
+      BUILT FOR THE WORKSHOP.<br>
+      READY FOR WHAT'S NEXT.
+    </span>
+
+    <div class="public-navbar__links">
+      <%= link_to root_path, class: "public-navbar__link", aria: { current: ("page" if controller_name == "pages" && action_name == "home") } do %>
+        <span class="public-navbar__index" aria-hidden="true">01 /</span>
+        <%= t ".home" %>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= link_to dashboard_path, class: "public-navbar__action" do %>
+          <%= t ".dashboard" %> <span aria-hidden="true">↗</span>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path, class: "public-navbar__action", aria: { current: ("page" if devise_controller? && controller_name == "sessions" && action_name == "new") } do %>
+          <%= t ".sign_in" %> <span aria-hidden="true">↗</span>
+        <% end %>
+      <% end %>
+    </div>
+  </nav>
+
+  <div class="public-header__rail" aria-hidden="true">
+    <span>WORKSHOP MANAGEMENT, REFORGED.</span>
+    <span class="public-header__rail-line"></span>
+    <span class="public-header__rail-detail">LESS ADMIN. MORE DRIVE.</span>
+    <span class="public-header__stripes"></span>
+  </div>
+</header>

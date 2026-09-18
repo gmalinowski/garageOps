@@ -1,0 +1,17 @@
+<% content_for :layout_content do %>
+  <div class="app-shell">
+    <aside class="sidebar">
+      aside
+    </aside>
+
+    <header class="header">
+      header
+    </header>
+
+    <main class="main">
+      <%= yield %>
+    </main>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
