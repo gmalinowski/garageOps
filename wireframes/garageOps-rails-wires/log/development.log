@@ -16145,3 +16145,14 @@ Processing by ServiceOrdersController#new as HTML
 Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 22:38:32 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
