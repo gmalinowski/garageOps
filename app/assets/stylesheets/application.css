@@ -37,6 +37,7 @@
 @import url("components/public_navbar.css") layer(components);
 
 /* Pages */
+@import url("pages/home.css") layer(pages);
 
 /* Utilities */
 @import url("utilities/utilities.css") layer(utilities);

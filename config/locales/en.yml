@@ -37,3 +37,34 @@ en:
       home_label: "CarForge home"
       navigation_label: "Main navigation"
       skip_to_content: "Skip to content"
+  pages:
+    home:
+      eyebrow: "Built for the workshop"
+      title: "Less admin. More time for the work."
+      development_label: "In development"
+      workflow:
+        label: "The service journey"
+        title: "Connected from start to finish."
+        customer: "Customer"
+        workshop: "Workshop"
+        steps:
+          intake:
+            title: "Check-in & intake"
+            description: "The customer, the vehicle, the reported issue."
+          diagnosis:
+            title: "Diagnosis & estimate"
+            description: "A clear scope of work and proposed costs."
+          approval:
+            title: "Customer approval"
+            description: "Agree on the work before moving forward."
+          handover:
+            title: "Repair & handover"
+            description: "Document the work. Explain what was done."
+      description: >-
+        From the first reported fault to the final handover,
+        CarForge is being built to keep service orders, customer
+        approvals, parts, and repair history in one place.
+      development_note: >-
+        CarForge is in active development. We're starting with
+        the essentials: a clear view of every job and the
+        information needed to move it forward.

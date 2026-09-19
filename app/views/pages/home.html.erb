@@ -1,1 +1,59 @@
-<h1>Home</h1>
+<section class="home" aria-labelledby="home-title">
+  <div class="home__hero">
+    <div class="home__copy">
+      <p class="home__eyebrow"><span aria-hidden="true">01 /</span> <%= t ".eyebrow" %></p>
+      <h1 class="home__title" id="home-title"><%= t ".title" %></h1>
+      <p class="home__description"><%= t ".description" %></p>
+
+      <div class="home__actions">
+        <% if user_signed_in? %>
+          <%= link_to dashboard_path, class: "home__action" do %>
+            <%= t "shared.public_navbar.dashboard" %> <span aria-hidden="true">↗</span>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path, class: "home__action" do %>
+            <%= t "shared.public_navbar.sign_in" %> <span aria-hidden="true">↗</span>
+          <% end %>
+        <% end %>
+        <span class="home__edition"><%= t ".development_label" %></span>
+      </div>
+    </div>
+
+    <section class="home__flow" aria-labelledby="home-flow-title">
+      <div class="home__flow-topline">
+        <p><span class="home__flow-signal" aria-hidden="true"></span><%= t ".workflow.label" %></p>
+        <span aria-hidden="true">CF / 01</span>
+      </div>
+
+      <h2 class="home__flow-title" id="home-flow-title"><%= t ".workflow.title" %></h2>
+
+      <ol class="home__flow-steps">
+        <% %w[intake diagnosis approval handover].each_with_index do |step, index| %>
+          <li class="home__flow-step<%= " home__flow-step--approval" if step == "approval" %>">
+            <span class="home__flow-number" aria-hidden="true"><%= format("%02d", index + 1) %></span>
+            <div class="home__flow-detail">
+              <h3><%= t ".workflow.steps.#{step}.title" %></h3>
+              <p><%= t ".workflow.steps.#{step}.description" %></p>
+            </div>
+            <span class="home__flow-symbol" aria-hidden="true"><%= step == "approval" ? "✓" : "↗" %></span>
+          </li>
+        <% end %>
+      </ol>
+
+      <div class="home__flow-footer">
+        <span><%= t ".workflow.customer" %></span>
+        <span class="home__flow-connection" aria-hidden="true">↔</span>
+        <span><%= t ".workflow.workshop" %></span>
+      </div>
+    </section>
+  </div>
+
+  <aside class="home__note" aria-labelledby="home-development-title">
+    <h2 class="home__note-title" id="home-development-title">
+      <span class="home__status-dot" aria-hidden="true"></span>
+      <%= t ".development_label" %>
+    </h2>
+    <p><%= t ".development_note" %></p>
+    <span class="home__note-symbol" aria-hidden="true">↗</span>
+  </aside>
+</section>
