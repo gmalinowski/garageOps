@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CarForge</title>
     <style>
-      /* Email styles need to be inline */
+      /* Essential styles are inline; these are small-screen enhancements. */
+      @media only screen and (max-width: 600px) {
+        .mailer-outer { padding: 24px 12px !important; }
+        .mailer-padding { padding-left: 24px !important; padding-right: 24px !important; }
+        .mailer-title { font-size: 30px !important; }
+      }
     </style>
   </head>
-
-  <body>
-    <%= yield %>
+  <body style="margin: 0; padding: 0; width: 100%; background-color: #eef1ed; color: #202a25; font-family: Arial, Helvetica, sans-serif; -webkit-text-size-adjust: 100%;">
+    <% if content_for?(:preheader) %>
+      <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; font-size: 1px; line-height: 1px; mso-hide: all;"><%= yield :preheader %></div>
+    <% end %>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#eef1ed">
+      <tr>
+        <td class="mailer-outer" align="center" style="padding: 48px 16px;">
+          <!--[if mso]><table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"><tr><td><![endif]-->
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 600px;">
+            <tr>
+              <td class="mailer-padding" bgcolor="#171f1b" style="padding: 32px 40px; border-radius: 16px 16px 0 0;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td style="color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -1px;">CAR<span style="color: #d4fc55;">FORGE</span><span aria-hidden="true" style="color: #d4fc55;"> /</span></td>
+                    <td align="right" aria-hidden="true" style="color: #d4fc55; font-family: 'Courier New', monospace; font-size: 20px; letter-spacing: -3px;">///</td>
+                  </tr>
+                </table>
+                <p style="margin: 12px 0 0; color: #bbc6bf; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;"><%= t("layouts.mailer.tagline") %></p>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#d4fc55" height="4" style="height: 4px; font-size: 0; line-height: 0;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="mailer-padding" bgcolor="#ffffff" style="padding: 40px; color: #202a25; font-size: 16px; line-height: 26px; overflow-wrap: anywhere;">
+                <%= yield %>
+              </td>
+            </tr>
+            <tr>
+              <td class="mailer-padding" bgcolor="#f7f9f5" style="padding: 24px 40px; border-top: 1px solid #e6ebe3; border-radius: 0 0 16px 16px;">
+                <p style="margin: 0; color: #56634e; font-size: 12px; line-height: 20px;"><%= t("layouts.mailer.footer") %></p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 24px 12px; color: #626e65; font-size: 11px; line-height: 18px; letter-spacing: 1px;">
+                <%= t("layouts.mailer.signature") %>
+              </td>
+            </tr>
+          </table>
+          <!--[if mso]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

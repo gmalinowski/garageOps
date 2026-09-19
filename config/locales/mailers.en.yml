@@ -1,0 +1,18 @@
+en:
+  layouts:
+    mailer:
+      tagline: "Built for the workshop."
+      footer: "An automated message from CarForge."
+      signature: "LESS ADMIN. MORE DRIVE."
+  devise:
+    mailer:
+      reset_password_instructions:
+        preheader: "Choose a new password for your CarForge account."
+        eyebrow: "Account / Password reset"
+        title: "Back to your workspace."
+        greeting: "Hello %{email},"
+        intro: "We received a request to reset your CarForge password. Follow the link below to choose a new one."
+        action: "Reset password"
+        unrequested: "Didn't request a reset?"
+        reassurance: "You can ignore this email. Your password will stay the same unless you use this link to set a new one."
+        fallback: "If the button doesn't work, copy and paste this link into your browser:"
