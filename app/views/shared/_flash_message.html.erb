@@ -1,0 +1,15 @@
+<div class="<%= class_names("flash-box", "flash-box--alert": type.to_s == "alert") %>"
+     data-controller="flash"
+     data-action="
+click->flash#toggle
+"
+     data-flash-type="<%= type %>"
+     role="<%= type.to_s == "alert" ? "alert" : "status" %>">
+  <p><%= message %></p>
+  <button type="button" data-action="click->flash#dismiss:stop" aria-label="<%= t(".dismiss") %>">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <span class="flash-box__progress" data-flash-target="progress" aria-hidden="true"></span>
+</div>

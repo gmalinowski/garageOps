@@ -61,6 +61,8 @@ group :development do
   gem "web-console"
 
   gem "letter_opener"
+
+  gem "rails_live_reload"
 end
 
 group :test do

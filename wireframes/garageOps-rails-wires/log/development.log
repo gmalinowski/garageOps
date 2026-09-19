@@ -15096,3 +15096,1052 @@ Processing by LocationsController#index as HTML
 Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Started GET "/" for 37.190.164.29 at 2026-09-19 19:52:06 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='GarageOpsRailsWires'*/[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 19:52:06 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:52:06 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 19:52:08 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 18.4ms | GC: 1.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | GC: 2.3ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/dashboard" for 37.190.164.29 at 2026-09-19 19:52:11 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 37.190.164.29 at 2026-09-19 19:52:15 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Finished "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:52:15 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 19:52:15 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:52:15 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/" for 37.190.164.29 at 2026-09-19 19:53:01 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.6ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 19:53:01 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:53:01 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 19:53:05 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/customers" for 37.190.164.29 at 2026-09-19 19:53:06 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/vehicles" for 37.190.164.29 at 2026-09-19 19:53:07 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.9ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 19:53:08 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 3.8ms | GC: 1.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 1.7ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 19:53:08 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.9ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/locations" for 37.190.164.29 at 2026-09-19 19:53:09 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 37.190.164.29 at 2026-09-19 19:53:10 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 19:53:13 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/SO-2026-0106" for 37.190.164.29 at 2026-09-19 19:53:13 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#show as HTML
+  Parameters: {"id" => "SO-2026-0106"}
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/show.html.erb within layouts/application
+  Rendered service_orders/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Finished "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:53:20 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Finished "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 19:53:23 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/" for 185.72.187.97 at 2026-09-19 20:28:14 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 185.72.187.97 at 2026-09-19 20:28:14 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 185.72.187.97 at 2026-09-19 20:28:14 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/" for 37.190.164.29 at 2026-09-19 20:33:14 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 20:33:14 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 20:33:14 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/dashboard" for 37.190.164.29 at 2026-09-19 20:33:31 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 20:33:32 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/customers" for 37.190.164.29 at 2026-09-19 20:33:34 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 20:33:34 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/customers" for 37.190.164.29 at 2026-09-19 20:33:38 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 37.190.164.29 at 2026-09-19 20:33:38 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 20:33:39 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 20:33:41 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 37.190.164.29 at 2026-09-19 20:33:41 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 20:33:42 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 20:33:43 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 7.7ms | GC: 7.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 7.1ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.1ms)
+
+
+Started GET "/locations" for 37.190.164.29 at 2026-09-19 20:33:56 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Finished "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 20:34:02 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Finished "/hotwire-livereload" [WebSocket] for 185.72.187.97 at 2026-09-19 20:55:55 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/hotwire-livereload" for 185.72.187.97 at 2026-09-19 20:59:00 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 185.72.187.97 at 2026-09-19 20:59:00 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/" for 37.190.164.29 at 2026-09-19 21:03:41 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 21:03:41 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 21:03:41 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 21:03:41 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 37.190.164.29 at 2026-09-19 21:03:45 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 21:03:45 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/customers" for 37.190.164.29 at 2026-09-19 21:03:46 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 37.190.164.29 at 2026-09-19 21:03:47 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 21:03:48 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 21:03:48 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 21:03:48 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 21:03:49 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 37.190.164.29 at 2026-09-19 21:03:49 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.7ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 21:03:53 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/locations" for 37.190.164.29 at 2026-09-19 21:03:53 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/settings" for 37.190.164.29 at 2026-09-19 21:03:54 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/registrations/new" for 37.190.164.29 at 2026-09-19 21:03:54 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 13.9ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | GC: 0.3ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/settings/memberships" for 37.190.164.29 at 2026-09-19 21:03:56 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings/locations" for 37.190.164.29 at 2026-09-19 21:03:56 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/locations/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered settings/locations/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/settings/memberships" for 37.190.164.29 at 2026-09-19 21:03:57 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/settings" for 37.190.164.29 at 2026-09-19 21:03:58 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/settings/memberships" for 37.190.164.29 at 2026-09-19 21:03:58 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::MembershipsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/memberships/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered settings/memberships/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/registrations/new" for 37.190.164.29 at 2026-09-19 21:03:59 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 37.190.164.29 at 2026-09-19 21:03:59 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 37.190.164.29 at 2026-09-19 21:04:01 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 37.190.164.29 at 2026-09-19 21:04:02 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 37.190.164.29 at 2026-09-19 21:04:02 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders" for 37.190.164.29 at 2026-09-19 21:04:03 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/dashboard" for 37.190.164.29 at 2026-09-19 21:04:03 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 37.190.164.29 at 2026-09-19 22:05:15 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 37.190.164.29 at 2026-09-19 22:05:15 +0200
+Cannot render console from 37.190.164.29! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 22:05:15 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Finished "/hotwire-livereload" [WebSocket] for 37.190.164.29 at 2026-09-19 22:11:18 +0200
+Hotwire::Livereload::ReloadChannel stopped streaming from hotwire-reload
+Started GET "/" for 185.72.187.97 at 2026-09-19 22:18:29 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-livereload" for 185.72.187.97 at 2026-09-19 22:18:29 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Started GET "/hotwire-livereload" [WebSocket] for 185.72.187.97 at 2026-09-19 22:18:29 +0200
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Hotwire::Livereload::ReloadChannel is transmitting the subscription confirmation
+Hotwire::Livereload::ReloadChannel is streaming from hotwire-reload
+Started GET "/service_orders" for 185.72.187.97 at 2026-09-19 22:18:32 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/customers" for 185.72.187.97 at 2026-09-19 22:18:32 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 185.72.187.97 at 2026-09-19 22:18:33 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 185.72.187.97 at 2026-09-19 22:18:33 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:34 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:34 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:36 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:36 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:37 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:37 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:38 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:38 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 185.72.187.97 at 2026-09-19 22:18:39 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 185.72.187.97 at 2026-09-19 22:18:39 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 3.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/customers" for 185.72.187.97 at 2026-09-19 22:18:40 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/service_orders" for 185.72.187.97 at 2026-09-19 22:18:40 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/dashboard" for 185.72.187.97 at 2026-09-19 22:18:40 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/service_orders" for 185.72.187.97 at 2026-09-19 22:18:43 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/index.html.erb within layouts/application
+  Rendered service_orders/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/customers" for 185.72.187.97 at 2026-09-19 22:18:44 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by CustomersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/vehicles" for 185.72.187.97 at 2026-09-19 22:18:44 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by VehiclesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vehicles/index.html.erb within layouts/application
+  Rendered vehicles/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inventory_items" for 185.72.187.97 at 2026-09-19 22:18:45 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by InventoryItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering inventory_items/index.html.erb within layouts/application
+  Rendered inventory_items/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:45 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:45 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:46 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/locations" for 185.72.187.97 at 2026-09-19 22:18:46 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by LocationsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering locations/index.html.erb within layouts/application
+  Rendered locations/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/purchase_orders" for 185.72.187.97 at 2026-09-19 22:18:46 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by PurchaseOrdersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering purchase_orders/index.html.erb within layouts/application
+  Rendered purchase_orders/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.3ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/settings" for 185.72.187.97 at 2026-09-19 22:18:46 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 185.72.187.97 at 2026-09-19 22:20:28 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by Settings::DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering settings/dashboard/index.html.erb within layouts/application
+  Rendered settings/_tabs.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered settings/dashboard/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/registrations/new" for 185.72.187.97 at 2026-09-19 22:20:28 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service_orders/new" for 185.72.187.97 at 2026-09-19 22:20:29 +0200
+Cannot render console from 185.72.187.97! Allowed networks: 127.0.0.0/127.255.255.255, ::1, ::ffff:127.0.0.0/::ffff:127.255.255.255
+Processing by ServiceOrdersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering service_orders/new.html.erb within layouts/application
+  Rendered service_orders/_form.html.erb (Duration: 17.8ms | GC: 0.0ms)
+  Rendered service_orders/new.html.erb within layouts/application (Duration: 18.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

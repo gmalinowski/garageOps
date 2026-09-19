@@ -29,6 +29,8 @@
 
 en:
   shared:
+    flash_message:
+      dismiss: "Dismiss notification"
     public_navbar:
       home: "Home"
       sign_in: "Log in"
