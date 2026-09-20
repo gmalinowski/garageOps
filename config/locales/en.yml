@@ -39,6 +39,8 @@ en:
       home_label: "CarForge home"
       navigation_label: "Main navigation"
       skip_to_content: "Skip to content"
+      sign_out: "Sign out"
+      sign_out_confirm: "Are you sure?"
   pages:
     home:
       eyebrow: "Built for the workshop"
