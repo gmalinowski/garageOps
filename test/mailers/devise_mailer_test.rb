@@ -15,7 +15,7 @@ host: "example.com"
     html = Nokogiri::HTML.fragment(email.html_part.body.decoded)
     txt = email.text_part.body.decoded
 
-    assert_equal [user.email], email.to
+    assert_equal [ user.email ], email.to
     assert_includes html.css("a").map { |link| link["href"] }, expected_url
     assert_includes txt, expected_url
   end

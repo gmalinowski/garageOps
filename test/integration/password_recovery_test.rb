@@ -23,7 +23,7 @@ class PasswordRecoveryTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
 
     email = ActionMailer::Base.deliveries.last
-    assert_equal [@user.email], email.to
+    assert_equal [ @user.email ], email.to
   end
 
   test "user can reset password with valid token" do
@@ -33,7 +33,7 @@ class PasswordRecoveryTest < ActionDispatch::IntegrationTest
       user: {
         reset_password_token: token,
         password: @new_password,
-        password_confirmation: @new_password,
+        password_confirmation: @new_password
       }
     }
 
@@ -50,7 +50,7 @@ class PasswordRecoveryTest < ActionDispatch::IntegrationTest
       user: {
         reset_password_token: "invalid",
         password: @new_password,
-        password_confirmation: @new_password,
+        password_confirmation: @new_password
       }
     }
 
