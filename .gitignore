@@ -36,3 +36,5 @@
 
 # Local Ruby language server environment.
 /.ruby-lsp/
+
+.idea/

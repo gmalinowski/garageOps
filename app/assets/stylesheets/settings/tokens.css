@@ -69,6 +69,9 @@
         --color-primary-active: light-dark(#1e40af, #3b82f6);
         --color-primary-contrast: light-dark(#ffffff, #0f172a);
 
+        --color-accent: #d4fc55;
+        --color-accent-surface: light-dark(#eef8d4, #25312a);
+
         /* Statuses */
         --color-success: light-dark(#15803d, #4ade80);
         --color-success-surface: light-dark(#dcfce7, #142d20);

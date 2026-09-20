@@ -24,6 +24,9 @@
   </head>
 
   <body>
+    <div id="flash-container" class="flash-container">
+      <%= render "shared/flash" %>
+    </div>
     <%= content_for?(:layout_content) ? yield(:layout_content) : yield %>
   </body>
 </html>
