@@ -1,7 +1,6 @@
 require "test_helper"
 
 class OrganizationTest < ActiveSupport::TestCase
-
   test "is valid with a name" do
     organization = Organization.new(name: "Test organization")
 
@@ -37,7 +36,7 @@ class OrganizationTest < ActiveSupport::TestCase
 
     assert_equal organizations(:no_members_2).users.size, 1
     assert_equal(
-      [user_1.id, user_2.id].sort,
+      [ user_1.id, user_2.id ].sort,
       organization.users.pluck(:id).sort
     )
   end
@@ -52,5 +51,4 @@ class OrganizationTest < ActiveSupport::TestCase
     assert Membership.exists?(membership&.id)
     assert organization.errors[:base].any?
   end
-
 end

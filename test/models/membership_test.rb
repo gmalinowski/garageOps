@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MembershipTest < ActiveSupport::TestCase
-
   test "is valid with a user and an organization" do
     membership = Membership.new(
       user: users(:one),
