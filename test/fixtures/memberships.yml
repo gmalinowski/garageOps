@@ -1,11 +1,29 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+user_one_in_org_one:
+  user: one
+  organization: one
+  status: active
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-#one: {}
-# column: value
-#
-#two: {}
-# column: value
+user_two_in_org_one:
+  user: two
+  organization: one
+  status: active
+
+user_two_in_org_two:
+  user: two
+  organization: two
+  status: active
+
+
+org_with_two_members_1:
+  user: one_org_1
+  organization: two_members
+  status: active
+
+org_with_two_members_2:
+  user: one_org_2
+  organization: two_members
+  status: active
+
+user_with_one_org:
+  user: with_one_org
+  organization: one

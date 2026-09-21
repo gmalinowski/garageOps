@@ -5,17 +5,17 @@ class MembershipTest < ActiveSupport::TestCase
   test "is valid with a user and an organization" do
     membership = Membership.new(
       user: users(:one),
-      organization: organizations(:one)
+      organization: organizations(:three)
     )
 
     assert membership.valid?
   end
 
   test "many users can join organization" do
-    Membership.create!(user: users(:one), organization: organizations(:two))
+    existing_membership = memberships(:user_two_in_org_two)
     membership = Membership.new(
-      user: users(:two),
-      organization: organizations(:two)
+      user: users(:three),
+      organization: existing_membership.organization
     )
 
     assert membership.valid?
@@ -34,12 +34,13 @@ class MembershipTest < ActiveSupport::TestCase
       user: users(:one),
     )
     assert membership.invalid?
+    assert membership.errors.of_kind?(:organization, :blank)
   end
 
   test "status is active by default" do
     membership = Membership.create!(
       user: users(:one),
-      organization: organizations(:one)
+      organization: organizations(:three)
     )
 
     assert_equal "active", membership.status
@@ -49,7 +50,7 @@ class MembershipTest < ActiveSupport::TestCase
     %w[active suspended].each do |status|
       membership = Membership.new(
         user: users(:one),
-        organization: organizations(:one),
+        organization: organizations(:three),
         status: status
       )
 
@@ -61,7 +62,7 @@ class MembershipTest < ActiveSupport::TestCase
     invalid_status = "unknown"
     membership = Membership.new(
       user: users(:one),
-      organization: organizations(:one),
+      organization: organizations(:three),
       status: invalid_status
     )
 
@@ -71,14 +72,11 @@ class MembershipTest < ActiveSupport::TestCase
   end
 
   test "does not allow a user to join the same organization twice" do
-    Membership.create!(
-      user: users(:one),
-      organization: organizations(:one),
-    )
+    existing_membership = memberships(:user_one_in_org_one)
 
     membership = Membership.new(
-      user: users(:one),
-      organization: organizations(:one),
+      user: existing_membership.user,
+      organization: existing_membership.organization,
     )
 
     assert membership.invalid?
@@ -86,12 +84,9 @@ class MembershipTest < ActiveSupport::TestCase
   end
 
   test "user can join many organizations" do
-    Membership.create!(
-      user: users(:one),
-      organization: organizations(:one),
-    )
+    existing_membership = memberships(:user_one_in_org_one)
     membership = Membership.new(
-      user: users(:one),
+      user: existing_membership.user,
       organization: organizations(:two),
     )
     assert membership.valid?

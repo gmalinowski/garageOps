@@ -12,4 +12,24 @@ one: {
 two: {
        name: "warsztaty stefana"
 }
+
+three: {
+       name: "organization from moon"
+}
 # column: value
+
+no_members_1: {
+       name: "Organization without members 1"
+}
+
+no_members_2: {
+       name: "Organization without members 2"
+}
+
+no_members_3: {
+       name: "Organization without members 3"
+}
+
+two_members: {
+                    name: "Two members"
+}
