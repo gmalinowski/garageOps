@@ -11,8 +11,8 @@
             <%= t "shared.public_navbar.dashboard" %> <span aria-hidden="true">↗</span>
           <% end %>
         <% else %>
-          <%= link_to new_user_session_path, class: "home__action" do %>
-            <%= t "shared.public_navbar.sign_in" %> <span aria-hidden="true">↗</span>
+          <%= link_to new_user_registration_path, class: "home__action promo" do %>
+            <%= t "shared.public_navbar.sign_up_promo" %> <span aria-hidden="true">↗</span>
           <% end %>
         <% end %>
         <span class="home__edition"><%= t ".development_label" %></span>

@@ -1,5 +1,6 @@
 .home {
   --home-accent: #d4fc55;
+  --home-accent-secondary: #a855f7;
   --home-ink: light-dark(#202b25, #f0f3e9);
   --home-muted: light-dark(#56625b, #adb8af);
   --home-line: light-dark(#cdd5cc, #36443b);
@@ -73,6 +74,19 @@
   font-weight: 500;
   text-decoration: none;
   transition: background-color 160ms ease, color 160ms ease;
+
+  &.promo {
+    background: var(--home-accent-secondary);
+    color: white;
+    font-weight: bold;
+    border-color: var(--home-accent-secondary);
+
+    &:hover {
+      background: var(--home-accent);
+      color: color-mix(var(--home-accent-secondary), black 50%);
+      box-shadow: 0 2px 10px 0 var(--home-accent-secondary), 0 0 2px var(--home-accent-secondary);
+    }
+  }
 }
 
 .home__action > span {

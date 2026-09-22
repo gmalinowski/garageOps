@@ -34,6 +34,8 @@ en:
     public_navbar:
       home: "Home"
       sign_in: "Log in"
+      sign_up: "Sign up"
+      sign_up_promo: "Get your own CarForge website"
       dashboard: "Dashboard"
       my_profile: "My profile"
       home_label: "CarForge home"
