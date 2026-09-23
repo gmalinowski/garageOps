@@ -1,54 +1,51 @@
 require "test_helper"
 
 class OrganizationTest < ActiveSupport::TestCase
-  test "is valid with a name" do
-    organization = Organization.new(name: "Test organization")
 
-    assert organization.valid?
+  test "is valid with all required fields" do
+    org = build(:organization)
+    assert org.valid?
   end
 
-  test "requires a name" do
-    organization = Organization.new(name: "")
-
-    assert_not organization.valid?
-    assert organization.errors.of_kind?(:name, :blank)
+  [:name, :slug, :address_line_1, :postal_code, :city, :country_code, :phone, :email, :tax_id].each do |field|
+    test "requires #{field}" do
+      org = build(:organization, field => "")
+      assert_not org.valid?
+      assert org.errors.of_kind?(field, :blank)
+    end
   end
 
-  test "requires a unique name" do
-    Organization.create!(name: "abc")
-    organization = Organization.new(name: "abc")
+  [:name, :slug, :tax_id].each do |field|
+    test "requires #{field} to be unique" do
+      value = "unique-vlaue"
+      create(:organization, field => value)
+      org = build(:organization, field => value)
 
-    assert_not organization.valid?
-    assert organization.errors.of_kind?(:name, :taken)
+      assert_not org.valid?
+      assert org.errors.of_kind?(field, :taken)
+    end
   end
 
   test "returns only users the organization has" do
-    organization = organizations(:no_members_1)
-    user_1 = users(:no_organization_1)
-    user_2 = users(:no_organization_2)
+    org = create(:organization)
+    user_1 = create(:user)
+    user_2 = create(:user)
+    user_3 = create(:user)
+    create(:membership, user: user_1, organization: org, status: :active)
+    create(:membership, user: user_2, organization: org, status: :active)
+    create(:membership, user: user_3, organization: create(:organization), status: :active)
 
-    Membership.create!(user: user_1, organization: organization)
-    Membership.create!(user: user_2, organization: organization)
-    Membership.create!(
-      user: users(:no_organization_3),
-      organization: organizations(:no_members_2)
-    )
-
-    assert_equal organizations(:no_members_2).users.size, 1
-    assert_equal(
-      [ user_1.id, user_2.id ].sort,
-      organization.users.pluck(:id).sort
-    )
+    assert_equal 3, User.all.size
+    assert_equal [user_1.id, user_2.id], org.users.pluck(:id).sort
   end
 
   test "cannot be destroyed while memberships exist" do
-    organization = organizations(:two_members)
-    membership = organization.memberships.first
+    org = create(:organization)
+    create(:membership, user: create(:user), organization: org, status: :active)
 
-    assert_equal false, organization.destroy
-
-    assert Organization.exists?(organization.id)
-    assert Membership.exists?(membership&.id)
-    assert organization.errors[:base].any?
+    assert_equal false, org.destroy
+    assert Organization.exists?(org.id)
+    assert org.errors[:base].any?
   end
+
 end

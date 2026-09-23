@@ -74,3 +74,7 @@ end
 gem "devise", "~> 5.0"
 
 gem "pundit", "~> 2.5"
+
+gem "factory_bot_rails", "~> 6.5", groups: [:development, :test]
+
+gem "faker", "~> 3.8", groups: [:development, :test]

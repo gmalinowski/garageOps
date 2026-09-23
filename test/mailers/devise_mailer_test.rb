@@ -1,7 +1,7 @@
 require "test_helper"
 class DeviseMailerTest < ActionMailer::TestCase
   test "reset_password_instructions include password reset link" do
-    user = users(:one)
+    user = create(:user)
     token = "jfa89s923f"
     email = Devise::Mailer.reset_password_instructions(user, token)
     expected_url = Rails.application.routes.url_helpers.edit_user_password_url(

@@ -4,13 +4,9 @@ class PasswordRecoveryTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
 
   setup do
-    @user = users(:one)
     @old_password = "OldPassword123!"
     @new_password = "NewPassword123!"
-    @user.update!(
-      password: @old_password,
-      password_confirmation: @old_password,
-    )
+    @user = create(:user, password: @old_password, password_confirmation: @old_password)
   end
 
   test "user can request password reset instructions" do

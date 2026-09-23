@@ -15,7 +15,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user sees dashboard link" do
-    sign_in users(:one)
+    sign_in create(:user)
     get root_path
     assert_select "nav a[href=?]", dashboard_path, count: 1
     assert_select "nav a[href=?]", new_user_session_path, count: 0

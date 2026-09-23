@@ -10,7 +10,8 @@ class Settings::ProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user can access profile edit page" do
-    sign_in users(:one)
+    user = create(:user)
+    sign_in user
     get edit_settings_profile_path
     assert_response :success
   end
