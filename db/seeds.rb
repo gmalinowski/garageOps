@@ -8,8 +8,12 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create!(
-  email: "user1@example.com",
-  password: "password",
-  password_confirmation: "password"
+user = User.find_or_initialize_by(email: "user1@example.com")
+
+user.assign_attributes(
+  password: "password1234",
+  password_confirmation: "password1234",
+  confirmed_at: user.confirmed_at || Time.current
 )
+
+user.save!

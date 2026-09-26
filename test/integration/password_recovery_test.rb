@@ -51,6 +51,7 @@ class PasswordRecoveryTest < ActionDispatch::IntegrationTest
     }
 
     assert_response :unprocessable_entity
+    @user.reload
     assert @user.valid_password?(@old_password)
     assert_not @user.valid_password?(@new_password)
   end

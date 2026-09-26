@@ -1,0 +1,9 @@
+<% if form.object.errors[attribute].any? %>
+  <div class="form__error"
+       id="<%= form.field_id(attribute, :error) %>"
+       data-error-for="<%= form.field_name(attribute) %>">
+    <% form.object.errors[attribute].each do |msg| %>
+    <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>

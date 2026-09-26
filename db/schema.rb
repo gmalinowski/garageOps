@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_23_192452) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_25_210637) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -63,19 +63,19 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_23_192452) do
 
   create_table "organizations", force: :cascade do |t|
     t.boolean "active", default: true, null: false
-    t.string "address_line_1", null: false
+    t.string "address_line_1"
     t.string "address_line_2"
-    t.string "city", null: false
-    t.string "country_code", null: false
+    t.string "city"
+    t.string "country_code"
     t.datetime "created_at", null: false
     t.text "description"
-    t.string "email", null: false
+    t.string "email"
     t.string "name", null: false
-    t.string "phone", null: false
-    t.string "postal_code", null: false
+    t.string "phone"
+    t.string "postal_code"
     t.string "regon"
     t.string "slug", null: false
-    t.string "tax_id", null: false
+    t.string "tax_id"
     t.datetime "updated_at", null: false
     t.string "website"
     t.index ["name"], name: "index_organizations_on_name", unique: true
@@ -94,13 +94,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_23_192452) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.datetime "confirmation_sent_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
+    t.string "unconfirmed_email"
     t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

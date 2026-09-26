@@ -1,7 +1,6 @@
 require "test_helper"
 
 class MembershipTest < ActiveSupport::TestCase
-
   test "many users can join organization" do
     organization = create(:organization)
     user_1 = create(:user)
@@ -15,7 +14,7 @@ class MembershipTest < ActiveSupport::TestCase
     assert_equal 3, organization.memberships.count
     assert_equal 3, organization.users.count
     assert_equal(
-      [user_1.id, user_2.id, user_3.id].sort,
+      [ user_1.id, user_2.id, user_3.id ].sort,
       organization.users.pluck(:id).sort
     )
   end

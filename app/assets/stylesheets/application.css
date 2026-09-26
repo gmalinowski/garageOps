@@ -36,6 +36,7 @@
 /* Components */
 @import url("components/public_navbar.css") layer(components);
 @import url("components/flash.css") layer(components);
+@import url("components/button.css") layer(components);
 
 /* Pages */
 @import url("pages/home.css") layer(pages);

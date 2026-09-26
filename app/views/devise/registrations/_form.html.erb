@@ -1,0 +1,37 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form" }) do |f| %>
+
+    <div class="form__grid form__grid--two-columns">
+      <div class="form__field form__field--full-width">
+        <%= f.label :email %>
+        <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", aria: field_error_aria(f, :email) %>
+        <%= render "shared/field_errors", form: f, attribute: :email %>
+      </div>
+
+      <div class="form__field">
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true, autocomplete: "new-password",
+                             aria: field_error_aria(
+                               f,
+                               :password,
+                               describedby: ("registration-password-hint" if @minimum_password_length)
+                             ) %>
+        <%= render "shared/field_errors", form: f, attribute: :password %>
+        <% if @minimum_password_length %>
+          <p class="form__hint" id="registration-password-hint"><%= @minimum_password_length %> characters minimum</p>
+        <% end %>
+      </div>
+
+      <div class="form__field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", aria: field_error_aria(
+          f,
+          :password_confirmation,
+        ) %>
+        <%= render "shared/field_errors", form: f, attribute: :password_confirmation %>
+      </div>
+    </div>
+
+  <div class="form__actions">
+    <%= f.submit "Sign up", class: "button button--primary button--lg button--full-width" %>
+  </div>
+<% end %>

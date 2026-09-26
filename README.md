@@ -38,4 +38,4 @@ bin/dev
 Open [localhost:3000](http://localhost:3000). The development account is:
 
 - Email: `user1@example.com`
-- Password: `password`
+- Password: `password1234`

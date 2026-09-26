@@ -9,6 +9,7 @@ class SessionsTest < ActionDispatch::IntegrationTest
       password: "passwordpassword",
       password_confirmation: "passwordpassword"
     )
+    @user.confirm
   end
 
   test "valid credentials open the protected landing page (dashboard)" do
@@ -20,6 +21,19 @@ class SessionsTest < ActionDispatch::IntegrationTest
     }
 
     assert_redirected_to dashboard_path
+  end
+
+  test "unconfirmed user cannot log in" do
+    user = create(:user, :unconfirmed)
+    post user_session_path, params: {
+      user: {
+        email: user.email,
+        password: user.password
+      }
+    }
+
+    assert_redirected_to new_user_session_path
+    assert_equal I18n.t("devise.failure.unconfirmed"), flash[:alert]
   end
 
   test "invalid credentials show error message" do

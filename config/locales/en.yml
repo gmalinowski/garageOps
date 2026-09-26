@@ -28,6 +28,38 @@
 #       enabled: "ON"
 
 en:
+  actions:
+    sign_in: "Login"
+    send: "Send"
+  countries:
+    select_a_country: "Select a country code"
+    PL: "Poland"
+    DE: "Germany"
+    CZ: "Czechia"
+    SK: "Slovakia"
+  activerecord:
+    attributes:
+      organization:
+        name: "Workshop name"
+        address_line_1: "Address"
+        address_line_2: "Additional address information"
+        tax_id: "VAT Registration Number"
+    errors:
+      models:
+        user:
+          requires_organization: "you must belong to an organization"
+  devise:
+    registrations:
+      new:
+        title: "Create your account"
+      form:
+        account_details: "Account details"
+    sessions:
+      new:
+        title: "Log in to your account"
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
   shared:
     flash_message:
       dismiss: "Dismiss notification"

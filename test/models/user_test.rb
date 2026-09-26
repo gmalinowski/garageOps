@@ -24,4 +24,36 @@ class UserTest < ActiveSupport::TestCase
     assert user.errors[:base].any?
   end
 
+  test "requires email" do
+    user = build(:user, email: "")
+    assert user.invalid?
+    assert user.errors.of_kind?(:email, :blank)
+  end
+
+  test "rejects mismatched password confirmation" do
+    user = build(:user, password: "kiueokdjfie234", password_confirmation: "ddddddddjjjjjjjjjjkljk")
+    assert user.invalid?
+    assert user.errors.of_kind?(:password_confirmation, :confirmation)
+  end
+
+  test "rejects passwords shorter than 12 characters" do
+    password = "a" * 11
+    user = build(:user,
+                 password: password,
+                 password_confirmation: password
+    )
+
+    assert user.invalid?
+    assert user.errors.of_kind?(:password, :too_short)
+  end
+
+  test "accepts a 12-character password" do
+    password = "a" * 12
+    user = build(:user,
+                 password: password,
+                 password_confirmation: password
+    )
+
+    assert user.valid?, user.errors.full_messages.to_sentence
+  end
 end

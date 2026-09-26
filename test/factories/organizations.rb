@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :organization do
     name { Faker::Company.unique.name }
-    slug { name.parameterize }
     description { Faker::Company.catch_phrase }
 
     address_line_1 { Faker::Address.street_address }

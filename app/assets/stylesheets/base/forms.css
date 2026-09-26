@@ -1,0 +1,170 @@
+
+.form-container {
+    width: 100%;
+    max-width: 42rem;
+    margin-inline: auto;
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.form {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.form__section {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.form__section + .form__section {
+    padding-top: var(--space-6);
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.form__section-title {
+    margin: 0 0 var(--space-4);
+    padding: 0;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.form__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+}
+
+/* .field and .actions also support the existing Devise markup. */
+.form :where(.form__field, .field) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+}
+
+.form :where(.form__field, .field) > p {
+    margin: 0;
+}
+
+.form :where(.form__field, .field):has([required]) > label::after {
+    content: " *";
+    color: red;
+}
+
+.form label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Text controls: keep checkboxes, radios and buttons at their native size. */
+.form :where(
+    input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="hidden"], [type="range"], [type="color"], [type="file"], [type="image"]),
+    select,
+    textarea
+) {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: var(--space-2) var(--space-3);
+    border: var(--border-width) solid var(--color-input-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-input-background);
+    color: var(--color-text);
+    font: inherit;
+}
+
+.form textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.form :where(input, textarea)::placeholder {
+    color: var(--color-input-placeholder);
+    opacity: 1;
+}
+
+.form :where(input, select, textarea):not(.button):focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+.form :where(input, select, textarea):not(.button):disabled {
+    background-color: var(--color-input-disabled);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+}
+
+.form :where(input[type="checkbox"], input[type="radio"]) {
+    accent-color: var(--color-primary);
+}
+
+.form .form__field--inline {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Validation: Rails wrappers and explicitly marked invalid controls. */
+.form :where(.form__hint, .field em) {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-style: normal;
+}
+
+.form :where(.form__hint, .form__error) {
+    margin: 0;
+}
+
+.form .form__error {
+    color: var(--color-danger);
+    font-size: var(--font-size-sm);
+}
+
+.form :where([aria-invalid="true"], .field_with_errors input, .field_with_errors select, .field_with_errors textarea) {
+    border-color: var(--color-danger);
+}
+
+.form :where(.form__errors, [data-errors]) {
+    padding: var(--space-4);
+    border: var(--border-width) solid var(--color-danger-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-danger-surface);
+    color: var(--color-danger);
+    overflow-wrap: anywhere;
+}
+
+.form :where(.form__errors, [data-errors]) h2 {
+    margin: 0 0 var(--space-2);
+    font-size: var(--font-size-md);
+}
+
+.form :where(.form__errors, [data-errors]) ul {
+    margin: 0;
+    padding-inline-start: var(--space-5);
+    list-style: disc;
+}
+
+/* Actions wrap on narrow screens. */
+.form :where(.form__actions, .actions) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+@media (min-width: 40rem) {
+    .form__grid--two-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form__field--full-width {
+        grid-column: 1 / -1;
+    }
+}
