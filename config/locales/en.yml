@@ -28,6 +28,11 @@
 #       enabled: "ON"
 
 en:
+  organizations:
+    new:
+      title: "Create organization"
+    form:
+      create_organization: "Create organization"
   actions:
     sign_in: "Login"
     send: "Send"

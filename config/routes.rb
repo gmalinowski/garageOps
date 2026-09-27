@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "home" => "pages#home", as: :home
 
   resource :dashboard, only: :show
+  resources :organizations, only: [ :new, :create ]
 
   namespace :settings do
     resource :profile, only: %i[edit update]

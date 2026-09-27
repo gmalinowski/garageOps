@@ -1,0 +1,15 @@
+<% options ||= {} %>
+<% full_width ||= false %>
+
+<div class="<%= class_names("form__field", "form__field--full-width": full_width) %>">
+  <%= form.label attribute %>
+
+  <%= form.public_send(
+        type,
+        attribute,
+        **options,
+        aria: field_error_aria(form, attribute)
+    ) %>
+
+  <%= render "shared/field_errors", form: form, attribute: attribute %>
+</div>

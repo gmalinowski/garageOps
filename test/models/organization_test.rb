@@ -1,7 +1,6 @@
 require "test_helper"
 
 class OrganizationTest < ActiveSupport::TestCase
-
   test "is valid with all required fields" do
     org = build(:organization)
     assert org.valid?

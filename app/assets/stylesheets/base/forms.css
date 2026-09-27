@@ -1,4 +1,3 @@
-
 .form-container {
     width: 100%;
     max-width: 42rem;
@@ -24,7 +23,7 @@
     border: 0;
 }
 
-.form__section + .form__section {
+.form__section+.form__section {
     padding-top: var(--space-6);
     border-top: var(--border-width) solid var(--color-border);
 }
@@ -50,13 +49,17 @@
     min-width: 0;
 }
 
-.form :where(.form__field, .field) > p {
+.form :where(.form__field, .field)>p {
     margin: 0;
 }
 
-.form :where(.form__field, .field):has([required]) > label::after {
+.form :where(.form__field, .field):has([required])>label::after {
     content: " *";
     color: red;
+}
+
+.form :where(.form__field, .field):has([readonly])>input {
+    background: lightgray;
 }
 
 .form label {
@@ -65,11 +68,9 @@
 }
 
 /* Text controls: keep checkboxes, radios and buttons at their native size. */
-.form :where(
-    input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="hidden"], [type="range"], [type="color"], [type="file"], [type="image"]),
+.form :where(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="hidden"], [type="range"], [type="color"], [type="file"], [type="image"]),
     select,
-    textarea
-) {
+    textarea) {
     box-sizing: border-box;
     width: 100%;
     min-height: 2.75rem;
@@ -79,6 +80,15 @@
     background-color: var(--color-input-background);
     color: var(--color-text);
     font: inherit;
+}
+
+.form select {
+    height: 2.75rem;
+}
+
+/* A select rendered directly in a grid should line up with adjacent controls. */
+.form__grid>select {
+    align-self: end;
 }
 
 .form textarea {
