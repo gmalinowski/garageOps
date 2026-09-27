@@ -34,7 +34,9 @@
 @import url("layouts/content.css") layer(layouts);
 
 /* Components */
+@import url("components/navbar.css") layer(components);
 @import url("components/public_navbar.css") layer(components);
+@import url("components/panel_navbar.css") layer(components);
 @import url("components/flash.css") layer(components);
 @import url("components/button.css") layer(components);
 
