@@ -1,6 +1,5 @@
-
 <div class="form-container">
   <h2 class="title"><%= t ".title" %></h2>
-  <%= render "form" %>
+  <%= render "devise/registrations/form", minimum_password_length: @minimum_password_length %>
   <%= render "devise/shared/links" %>
 </div>
