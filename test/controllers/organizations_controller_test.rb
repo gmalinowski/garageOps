@@ -4,6 +4,27 @@ require "minitest/mock"
 class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
+  test "lists only organizations from policy scope" do
+    user = create(:user)
+
+    accessible_organization = create(:organization)
+    create(
+      :membership,
+      user:,
+      organization: accessible_organization,
+      status: "active"
+    )
+
+    inaccessible_organization = create(:organization)
+
+    sign_in user
+    get organizations_path
+
+    assert_response :success
+    assert_select "li", text: accessible_organization.name
+    assert_select "li", text: inaccessible_organization.name, count: 0
+  end
+
   test "unauthenticated user can not open new organization form" do
     get new_organization_path
 

@@ -1,12 +1,14 @@
-class OrganizationsController < ApplicationController
-  before_action :authenticate_user!
+class OrganizationsController < PanelController
+  def index
+    @organizations = policy_scope(Organization).order(:name)
+  end
 
   def new
-    @organization = Organization.new
+    @organization = authorize Organization.new
   end
 
   def create
-    @organization = Organization.new(organization_params)
+    @organization = authorize Organization.new(organization_params)
 
     created = ActiveRecord::Base.transaction do
       unless @organization.save
