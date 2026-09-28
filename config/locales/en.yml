@@ -82,9 +82,13 @@ en:
       skip_to_content: "Skip to content"
       sign_out: "Sign out"
       sign_out_confirm: "Are you sure?"
-    panel_navbar:
-      sign_out: "Sign out"
-      sign_out_confirm: "Are you sure?"
+    navbar:
+      organization_switcher:
+        organizations: "Organizations"
+      panel:
+        sign_out: "Sign out"
+        dashboard: "Dashboard"
+        sign_out_confirm: "Are you sure?"
   pages:
     home:
       eyebrow: "Built for the workshop"

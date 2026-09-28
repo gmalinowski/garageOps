@@ -6,29 +6,7 @@
       </span>
     <% end %>
 
-    <details class="navbar-dropdown">
-      <summary class="navbar-dropdown__trigger">
-        Organizations
-        <span class="navbar-dropdown__count"><%= organizations.size %></span>
-        <span aria-hidden="true">&#x25bc;</span>
-      </summary>
-
-      <div class="navbar-dropdown__menu">
-        <p class="navbar-dropdown__label">Your organizations</p>
-
-        <ul data-testid="organization-switcher" class="navbar-dropdown__list">
-          <% organizations.each do |org| %>
-            <li class="navbar-dropdown__item"><%= org.name %></li>
-          <% end %>
-        </ul>
-
-        <div class="navbar-dropdown__actions">
-          <%= link_to "Manage organizations", organizations_path %>
-          <%= link_to "Create organization", new_organization_path %>
-        </div>
-      </div>
-    </details>
-
+    <%= render "shared/navbar/organization_switcher", organizations: %>
 
     <div class="navbar__links">
       <%= link_to dashboard_path,
