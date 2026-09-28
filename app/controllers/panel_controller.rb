@@ -4,6 +4,8 @@ class PanelController < ApplicationController
   before_action :authenticate_user!
   after_action :verify_pundit_authorization
 
+  helper_method :navigation_organizations
+
   layout "panel"
 
   private
@@ -14,5 +16,11 @@ class PanelController < ApplicationController
     else
       verify_authorized
     end
+  end
+
+  def navigation_organizations
+    @navigation_organizations ||= Pundit
+      .policy_scope!(current_user, Organization)
+      .order(:name)
   end
 end
