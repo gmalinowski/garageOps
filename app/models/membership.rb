@@ -1,10 +1,11 @@
 class Membership < ApplicationRecord
-  STATUSES = %w[active suspended].freeze
-
   belongs_to :user
   belongs_to :organization
 
-  validates :status, inclusion: { in: STATUSES }
+  enum :status, {
+    active: "active",
+    suspended: "suspended"
+  }, validate: true
 
   validates :user, uniqueness: { scope: :organization }
 end

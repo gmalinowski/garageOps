@@ -61,7 +61,7 @@ class MembershipTest < ActiveSupport::TestCase
 
   test "status is active by default" do
     membership = create(:membership)
-    assert_equal "active", membership.status
+    assert membership.active?
   end
 
   test "status can be any of allowed statuses" do
@@ -71,10 +71,9 @@ class MembershipTest < ActiveSupport::TestCase
     end
   end
 
-  test "is invalid when status is not in allowed statuses" do
-    invalid_status = "unknown"
-    membership = build(:membership, status: invalid_status)
-    assert_not Membership::STATUSES.include?(invalid_status)
+  test "is invalid when status is unknown" do
+    membership = build(:membership, status: "unknown")
+
     assert membership.invalid?
     assert membership.errors.of_kind?(:status, :inclusion)
   end
