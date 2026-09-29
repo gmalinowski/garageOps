@@ -1,0 +1,12 @@
+.main {
+  width: min(100%, var(--content-max-width));
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(var(--space-4), 3vw, var(--space-8));
+}
+
+@media (max-width: 36rem) {
+  .main {
+    padding: var(--space-3);
+  }
+}

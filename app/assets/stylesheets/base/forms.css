@@ -178,3 +178,50 @@
         grid-column: 1 / -1;
     }
 }
+
+@media (max-width: 39.999rem) {
+    .form-container {
+        padding: 0;
+        gap: var(--space-4);
+    }
+
+    .form {
+        gap: var(--space-4);
+    }
+
+    .form__section+.form__section {
+        padding-top: var(--space-4);
+    }
+
+    .form__section-title {
+        margin-bottom: var(--space-3);
+        font-size: var(--font-size-md);
+    }
+
+    .form__grid {
+        gap: var(--space-3);
+    }
+
+    .form :where(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="reset"], [type="hidden"], [type="range"], [type="color"], [type="file"], [type="image"]),
+        select,
+        textarea) {
+        min-height: 2.5rem;
+        padding: 0.375rem var(--space-2);
+    }
+
+    .form select {
+        height: 2.5rem;
+    }
+
+    .form textarea {
+        min-height: 6.5rem;
+    }
+
+    .form :where(.form__errors, [data-errors]) {
+        padding: var(--space-3);
+    }
+
+    .form :where(.form__actions, .actions) {
+        gap: var(--space-2);
+    }
+}

@@ -1,5 +1,11 @@
 .public-content {
   max-width: var(--content-max-width);
   margin-inline: auto;
-  padding: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(var(--space-4), 4vw, var(--space-12));
+}
+
+@media (max-width: 36rem) {
+  .public-content {
+    padding: var(--space-3);
+  }
 }

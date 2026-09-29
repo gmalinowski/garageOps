@@ -352,6 +352,67 @@
   }
 }
 
+@media (max-width: 36rem) {
+  .home__hero {
+    gap: var(--space-8);
+    padding-block: var(--space-3) var(--space-10);
+  }
+
+  .home__eyebrow {
+    margin-bottom: var(--space-4);
+  }
+
+  .home__title {
+    font-size: clamp(2.35rem, 12vw, 3.25rem);
+  }
+
+  .home__description,
+  .home__actions {
+    margin-top: var(--space-4);
+  }
+
+  .home__actions {
+    gap: var(--space-3);
+  }
+
+  .home__action {
+    width: 100%;
+    gap: var(--space-4);
+    padding-inline: var(--space-4);
+  }
+
+  .home__flow {
+    padding: var(--space-4);
+  }
+
+  .home__flow-title {
+    margin-block: var(--space-4);
+  }
+
+  .home__flow-steps {
+    gap: var(--space-4);
+  }
+
+  .home__flow-step {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .home__flow-step:not(:last-child)::after {
+    left: 1.75rem;
+    height: calc(var(--space-4) + 1px);
+  }
+
+  .home__flow-symbol {
+    display: none;
+  }
+
+  .home__note {
+    padding-block: var(--space-4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home__action {
     transition: none;
