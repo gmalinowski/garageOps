@@ -18,6 +18,22 @@ class OrganizationPolicyTest < ActiveSupport::TestCase
     assert_not_includes resolved, inaccessible_org
   end
 
+  test "scope includes organizations with suspended membership" do
+    organization = create(:organization)
+    create(
+      :membership,
+      user: @user,
+      organization:,
+      status: :suspended
+    )
+
+    resolved = OrganizationPolicy::Scope
+      .new(@user, Organization.all)
+      .resolve
+
+    assert_includes resolved, organization
+  end
+
   test "allows active member to view organization" do
     create(:membership, user: @user, organization: @org, status: "active")
     assert OrganizationPolicy.new(@user, @org).show?
@@ -25,6 +41,10 @@ class OrganizationPolicyTest < ActiveSupport::TestCase
 
   test "prevents suspended member from viewing organization" do
     create(:membership, user: @user, organization: @org, status: "suspended")
+    assert_not OrganizationPolicy.new(@user, @org).show?
+  end
+
+  test "prevents non-member from viewing organization" do
     assert_not OrganizationPolicy.new(@user, @org).show?
   end
 

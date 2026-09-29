@@ -3,6 +3,11 @@ class OrganizationsController < PanelController
     @organizations = policy_scope(Organization).order(:name)
   end
 
+  def show
+    @organization = policy_scope(Organization).find_by!(slug: params[:slug])
+    authorize @organization
+  end
+
   def new
     @organization = authorize Organization.new
   end

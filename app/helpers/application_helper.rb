@@ -11,4 +11,14 @@ module ApplicationHelper
       describedby: ids.join(" ").presence
     }
   end
+
+  def country_name(country_code)
+    return if country_code.blank?
+
+    country = ISO3166::Country[country_code]
+
+    country&.translation(I18n.locale.to_s) ||
+    country&.common_name ||
+    country_code
+  end
 end

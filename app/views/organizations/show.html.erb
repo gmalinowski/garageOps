@@ -1,0 +1,114 @@
+<% org = @organization %>
+
+<article class="organization-details" data-testid="organization-details">
+  <header class="organization-details__header">
+    <%= link_to t(".back_to_organizations"), organizations_path, class: "organization-details__back" %>
+
+    <div class="organization-details__heading">
+      <div>
+        <p class="organization-details__eyebrow">
+          <%= t(".eyebrow") %>
+        </p>
+
+        <h1 data-testid="organization-name">
+          <%= org.name %>
+        </h1>
+      </div>
+
+      <span class="organization-details__status organization-details__status--<%= org.active? ? "active" : "inactive" %>">
+        <%= org.active? ? t(".active") : t(".inactive") %>
+      </span>
+    </div>
+
+    <% if org.description.present? %>
+      <p class="organization-details__description">
+        <%= org.description %>
+      </p>
+    <% end %>
+  </header>
+
+  <div class="organization-details__sections">
+    <section
+      class="organization-details__section"
+      aria-labelledby="organization-contact-heading"
+    >
+      <h2 id="organization-contact-heading">
+        <%= t(".contact") %>
+      </h2>
+
+      <dl class="organization-details__list">
+        <% if org.email.present? %>
+          <div>
+            <dt><%= t(".email") %></dt>
+            <dd><%= mail_to org.email %></dd>
+          </div>
+        <% end %>
+
+        <% if org.phone.present? %>
+          <div>
+            <dt><%= t(".phone") %></dt>
+            <dd><%= phone_to org.phone %></dd>
+          </div>
+        <% end %>
+
+        <% if org.website.present? %>
+          <div>
+            <dt><%= t(".website") %></dt>
+
+            <dd>
+              <%= link_to org.website, org.website, target: "_blank", rel: "noreferrer" %>
+            </dd>
+          </div>
+        <% end %>
+      </dl>
+    </section>
+
+    <section
+      class="organization-details__section"
+      aria-labelledby="organization-address-heading"
+    >
+      <h2 id="organization-address-heading">
+        <%= t(".address") %>
+      </h2>
+
+      <address>
+        <% if org.address_line_1.present? %>
+          <%= org.address_line_1 %><br>
+        <% end %>
+
+        <% if org.address_line_2.present? %>
+          <%= org.address_line_2 %><br>
+        <% end %>
+
+        <%= [org.postal_code, org.city].compact_blank.join(" ") %><br>
+
+        <%= country_name(org.country_code) %>
+      </address>
+    </section>
+
+    <section
+      class="organization-details__section"
+      aria-labelledby="organization-registration-heading"
+    >
+      <h2 id="organization-registration-heading">
+        <%= t(".registration") %>
+      </h2>
+
+      <dl class="organization-details__list">
+        <% if org.tax_id.present? %>
+          <div>
+            <dt><%= t(".tax_id") %></dt>
+            <dd><%= org.tax_id %></dd>
+          </div>
+        <% end %>
+
+        <% if org.regon.present? %>
+          <div>
+            <dt><%= t(".regon") %></dt>
+            <dd><%= org.regon %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </section>
+  </div>
+</article>

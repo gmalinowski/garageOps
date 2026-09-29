@@ -1,6 +1,11 @@
 require "test_helper"
 
 class OrganizationTest < ActiveSupport::TestCase
+  test "uses slug as URL parameter" do
+    organization = create(:organization, slug: "my-workshop")
+
+    assert_equal "my-workshop", organization.to_param
+  end
   test "is valid with all required fields" do
     org = build(:organization)
     assert org.valid?
@@ -122,22 +127,22 @@ class OrganizationTest < ActiveSupport::TestCase
     assert org.errors.of_kind?(:slug, :invalid)
   end
 
-test "strips surrounding whitespace from slug" do
-  organization = build(
-    :organization,
-    slug: "  my-workshop  "
-  )
+  test "strips surrounding whitespace from slug" do
+    organization = build(
+      :organization,
+      slug: "  my-workshop  "
+    )
 
-  assert_equal "my-workshop", organization.slug
-  assert organization.valid?
-end
+    assert_equal "my-workshop", organization.slug
+    assert organization.valid?
+  end
 
-test "rejects a whitespace-only slug" do
-  organization = build(:organization, slug: "   ")
+  test "rejects a whitespace-only slug" do
+    organization = build(:organization, slug: "   ")
 
-  assert organization.invalid?
-  assert organization.errors.of_kind?(:slug, :blank)
-end
+    assert organization.invalid?
+    assert organization.errors.of_kind?(:slug, :blank)
+  end
 
   test "rejects invalid email formats" do
     org = build(:organization, email: "superexmple")
@@ -199,49 +204,49 @@ end
   end
 end
 
-test "rejects invalid phone number format" do
-  [
-    "call me",
-    "123",
-    "++48 123 456 789",
-    "+48 ABC 456 789"
-  ].each do |phone|
-    organization = build(:organization, phone: phone)
+  test "rejects invalid phone number format" do
+    [
+      "call me",
+      "123",
+      "++48 123 456 789",
+      "+48 ABC 456 789"
+    ].each do |phone|
+      organization = build(:organization, phone: phone)
 
-    assert organization.invalid?
-    assert organization.errors.of_kind?(:phone, :invalid)
+      assert organization.invalid?
+      assert organization.errors.of_kind?(:phone, :invalid)
+    end
   end
-end
 
   test "rejects invalid website/url format" do
     org = build(:organization, website: "asfdsdjfoiwejrq")
     assert org.invalid?
     assert org.errors.of_kind?(:website, :invalid)
   end
-{
-  phone: 32,
-  name: 120,
-  slug: 180,
-  description: 3_000,
-  email: 254,
-  website: 3_000,
-  address_line_1: 255,
-  address_line_2: 255,
-  city: 255,
-  postal_code: 32,
-  tax_id: 32,
-  regon: 14
-}.each do |field, maximum|
-  test "#{field} cannot be longer than #{maximum} characters" do
-    organization = build(
-      :organization,
-      field => "a" * (maximum + 1)
-    )
+  {
+    phone: 32,
+    name: 120,
+    slug: 180,
+    description: 3_000,
+    email: 254,
+    website: 3_000,
+    address_line_1: 255,
+    address_line_2: 255,
+    city: 255,
+    postal_code: 32,
+    tax_id: 32,
+    regon: 14
+  }.each do |field, maximum|
+    test "#{field} cannot be longer than #{maximum} characters" do
+      organization = build(
+        :organization,
+        field => "a" * (maximum + 1)
+      )
 
-    assert organization.invalid?
-    assert organization.errors.of_kind?(field, :too_long)
+      assert organization.invalid?
+      assert organization.errors.of_kind?(field, :too_long)
+    end
   end
-end
 
   %w[tax_id country_code description email website phone address_line_1 address_line_2 city postal_code regon].each do |field|
     test "empty #{field} is valid" do

@@ -43,12 +43,22 @@
     data-organization-switcher-target="menu"
     hidden
   >
-    <ul class="navbar-dropdown__actions">
-      <% organizations.each do |org| %>
-        <li class="navbar-dropdown__action">
-          <%= link_to org.name, organization_path(org) %>
+    <ul class="navbar-dropdown__list">
+      <% organizations.each do |organization| %>
+        <li class="navbar-dropdown__item">
+          <%= link_to organization.name, organization_path(organization) %>
         </li>
       <% end %>
     </ul>
+
+    <div class="navbar-dropdown__actions">
+      <%= link_to t(".manage_organizations"),
+                organizations_path,
+                class: "navbar-dropdown__action" %>
+
+      <%= link_to t(".create_organization"),
+                new_organization_path,
+                class: "navbar-dropdown__action navbar-dropdown__action--primary" %>
+    </div>
   </div>
 </div>

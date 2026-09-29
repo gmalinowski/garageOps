@@ -38,6 +38,10 @@ class Organization < ApplicationRecord
   has_many :memberships, dependent: :restrict_with_error
   has_many :users, through: :memberships
 
+  def to_param
+    slug
+  end
+
   private
 
   def website_must_be_http_url

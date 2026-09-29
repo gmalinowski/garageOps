@@ -35,6 +35,28 @@ en:
       success: "Organization was successfully created."
     form:
       create_organization: "Create organization"
+    show:
+      back_to_organizations: "Back to organizations"
+      eyebrow: "Organization"
+      active: "Active"
+      inactive: "Inactive"
+      contact: "Contact"
+      email: "Email"
+      phone: "Phone"
+      website: "Website"
+      address: "Address"
+      registration: "Registration details"
+      tax_id: "VAT registration number"
+      regon: "REGON"
+    index:
+      eyebrow: "Workspace"
+      title: "Organizations"
+      description: "Choose an organization to manage its locations, team and workshop operations."
+      create_organization: "Create organization"
+      open: "Open"
+      suspended: "Suspended"
+      empty_title: "No organizations yet"
+      empty_description: "Create your first organization to start configuring your workshop."
   actions:
     sign_in: "Login"
     send: "Send"
@@ -85,6 +107,8 @@ en:
     navbar:
       organization_switcher:
         organizations: "Organizations"
+        manage_organizations: "Manage organizations"
+        create_organization: "Create organization"
       panel:
         sign_out: "Sign out"
         dashboard: "Dashboard"

@@ -1,5 +1,66 @@
-<ul>
-  <% @organizations.each do |org| %>
-    <li><%= org.name %></li>
+<section class="organizations-index">
+  <header class="organizations-index__header">
+    <div>
+      <p class="organizations-index__eyebrow">
+        <%= t(".eyebrow") %>
+      </p>
+
+      <h1><%= t(".title") %></h1>
+
+      <p class="organizations-index__description">
+        <%= t(".description") %>
+      </p>
+    </div>
+
+    <%= link_to t(".create_organization"),
+                new_organization_path,
+                class: "button button--primary" %>
+  </header>
+
+  <% if @organizations.any? %>
+    <ul class="organizations-index__list" data-testid="organizations-list">
+      <% @organizations.each do |organization| %>
+        <li class="organization-card">
+          <% if policy(organization).show? %>
+            <%= link_to organization_path(organization),
+                        class: "organization-card__link" do %>
+              <h2><%= organization.name %></h2>
+
+              <% if organization.description.present? %>
+                <p><%= organization.description %></p>
+              <% end %>
+
+              <span class="organization-card__action">
+                <%= t(".open") %> →
+              </span>
+            <% end %>
+          <% else %>
+            <div class="organization-card__content">
+              <h2><%= organization.name %></h2>
+
+              <span
+                class="organization-card__status"
+                data-testid="organization-status"
+              >
+                <%= t(".suspended") %>
+              </span>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <div
+      class="organizations-index__empty"
+      data-testid="organizations-empty-state"
+    >
+      <h2><%= t(".empty_title") %></h2>
+
+      <p><%= t(".empty_description") %></p>
+
+      <%= link_to t(".create_organization"),
+                  new_organization_path,
+                  class: "button button--primary" %>
+    </div>
   <% end %>
-</ul>
+</section>
