@@ -1,0 +1,43 @@
+<header class="panel-header">
+  <nav class="navbar navbar--panel" aria-label="Application navigation">
+    <%= link_to root_path, class: "navbar__brand" do %>
+      <span class="navbar__wordmark">
+        CAR<span>FORGE</span>
+      </span>
+    <% end %>
+
+    <%= render "shared/navbar/organization_switcher", organizations: %>
+
+    <div class="navbar__links">
+      <%= link_to dashboard_path,
+            class: "navbar__link",
+            aria: { current: ("page" if controller_name == "dashboards") } do %>
+        <span class="navbar__index" aria-hidden="true">01 /</span> <%= t ".dashboard" %>
+      <% end %>
+
+
+      <%= link_to destroy_user_session_path,
+            class: "navbar__logout",
+            data: {
+              turbo_method: :delete,
+              turbo_confirm: t(".sign_out_confirm")
+            } do %>
+        <span><%= t ".sign_out" %></span>
+
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14 8l4 4m0 0-4 4m4-4H8m2-7H6.75A1.75 1.75 0 0 0 5 6.75v10.5C5 18.216 5.784 19 6.75 19H10"
+          />
+        </svg>
+      <% end %>
+    </div>
+  </nav>
+</header>

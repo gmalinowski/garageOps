@@ -1,12 +1,6 @@
 <% content_for :layout_content do %>
   <div class="app-shell">
-    <aside class="sidebar">
-      aside
-    </aside>
-
-    <header class="header">
-      header
-    </header>
+    <%= render "shared/navbar/panel", organizations: navigation_organizations %>
 
     <main class="main">
       <%= yield %>

@@ -1,0 +1,64 @@
+<div
+  class="navbar-dropdown"
+  data-controller="organization-switcher"
+  data-testid="organization-switcher"
+  data-action="
+        click@window->organization-switcher#closeOnOutside
+        keydown.esc@window->organization-switcher#close
+    "
+>
+  <button
+    type="button"
+    class="navbar-dropdown__trigger"
+    aria-expanded="false"
+    aria-controls="organization-switcher-menu"
+    data-organization-switcher-target="trigger"
+    data-action="organization-switcher#toggle"
+  >
+    <span><%= t ".organizations" %></span>
+
+    <span class="navbar-dropdown__count"><%= organizations.length %></span>
+
+    <span class="navbar-dropdown__icon" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 0 0-1.883 2.542l.857 6a2.25 2.25 0 0 0 2.227 1.932H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-1.883-2.542m-16.5 0V6A2.25 2.25 0 0 1 6 3.75h3.879a1.5 1.5 0 0 1 1.06.44l2.122 2.12a1.5 1.5 0 0 0 1.06.44H18A2.25 2.25 0 0 1 20.25 9v.776"
+        />
+      </svg>
+    </span>
+  </button>
+
+  <div
+    id="organization-switcher-menu"
+    class="navbar-dropdown__menu"
+    data-organization-switcher-target="menu"
+    hidden
+  >
+    <ul class="navbar-dropdown__list">
+      <% organizations.each do |organization| %>
+        <li class="navbar-dropdown__item">
+          <%= link_to organization.name, organization_path(organization) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="navbar-dropdown__actions">
+      <%= link_to t(".manage_organizations"),
+                organizations_path,
+                class: "navbar-dropdown__action" %>
+
+      <%= link_to t(".create_organization"),
+                new_organization_path,
+                class: "navbar-dropdown__action navbar-dropdown__action--primary" %>
+    </div>
+  </div>
+</div>

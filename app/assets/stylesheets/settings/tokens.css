@@ -64,10 +64,10 @@
         --color-border-strong: light-dark(#aeb8c5, #505968);
 
         /* Brand */
-        --color-primary: light-dark(#2563eb, #60a5fa);
-        --color-primary-hover: light-dark(#1d4ed8, #93c5fd);
-        --color-primary-active: light-dark(#1e40af, #3b82f6);
-        --color-primary-contrast: light-dark(#ffffff, #0f172a);
+        --color-primary: #d4fc55;
+        --color-primary-hover: #c4ef3f;
+        --color-primary-active: #b3df2c;
+        --color-primary-contrast: #202b25;
 
         --color-accent: #d4fc55;
         --color-accent-surface: light-dark(#eef8d4, #25312a);
@@ -96,13 +96,10 @@
         --color-input-disabled: light-dark(#e9edf2, #252a32);
 
         /* Focus */
-        --color-focus-ring: light-dark(#3b82f6, #60a5fa);
+        --color-focus-ring: #d4fc55;
         --focus-ring:
                 0 0 0 3px
-                light-dark(
-                        rgb(59 130 246 / 25%),
-                        rgb(96 165 250 / 35%)
-                );
+                rgb(212 252 85 / 35%);
 
         /* Shadows */
         --shadow-sm:

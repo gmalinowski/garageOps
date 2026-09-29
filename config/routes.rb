@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: :show
 
+  resources :organizations, param: :slug, only: %i[index new create show]
+
   namespace :settings do
     resource :profile, only: %i[edit update]
   end

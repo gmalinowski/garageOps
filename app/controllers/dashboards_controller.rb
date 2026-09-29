@@ -1,7 +1,5 @@
-class DashboardsController < ApplicationController
-  before_action :authenticate_user!
-  layout "panel"
-
+class DashboardsController < PanelController
   def show
+    authorize :dashboard
   end
 end

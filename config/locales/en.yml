@@ -28,12 +28,75 @@
 #       enabled: "ON"
 
 en:
+  organizations:
+    new:
+      title: "Create organization"
+    create:
+      success: "Organization was successfully created."
+    form:
+      create_organization: "Create organization"
+    show:
+      back_to_organizations: "Back to organizations"
+      eyebrow: "Organization"
+      active: "Active"
+      inactive: "Inactive"
+      contact: "Contact"
+      email: "Email"
+      phone: "Phone"
+      website: "Website"
+      address: "Address"
+      registration: "Registration details"
+      tax_id: "VAT registration number"
+      regon: "REGON"
+    index:
+      eyebrow: "Workspace"
+      title: "Organizations"
+      description: "Choose an organization to manage its locations, team and workshop operations."
+      create_organization: "Create organization"
+      open: "Open"
+      suspended: "Suspended"
+      empty_title: "No organizations yet"
+      empty_description: "Create your first organization to start configuring your workshop."
+  actions:
+    sign_in: "Login"
+    send: "Send"
+  countries:
+    select_a_country: "Select a country code"
+    PL: "Poland"
+    DE: "Germany"
+    CZ: "Czechia"
+    SK: "Slovakia"
+  activerecord:
+    attributes:
+      organization:
+        name: "Workshop name"
+        address_line_1: "Address"
+        address_line_2: "Additional address information"
+        tax_id: "VAT Registration Number"
+    errors:
+      models:
+        user:
+          requires_organization: "you must belong to an organization"
+  devise:
+    registrations:
+      new:
+        title: "Create your account"
+      form:
+        account_details: "Account details"
+    sessions:
+      new:
+        title: "Log in to your account"
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
   shared:
     flash_message:
       dismiss: "Dismiss notification"
     public_navbar:
       home: "Home"
       sign_in: "Log in"
+      sign_up: "Sign up"
+      sign_up_promo: "Get your own CarForge website"
       dashboard: "Dashboard"
       my_profile: "My profile"
       home_label: "CarForge home"
@@ -41,6 +104,15 @@ en:
       skip_to_content: "Skip to content"
       sign_out: "Sign out"
       sign_out_confirm: "Are you sure?"
+    navbar:
+      organization_switcher:
+        organizations: "Organizations"
+        manage_organizations: "Manage organizations"
+        create_organization: "Create organization"
+      panel:
+        sign_out: "Sign out"
+        dashboard: "Dashboard"
+        sign_out_confirm: "Are you sure?"
   pages:
     home:
       eyebrow: "Built for the workshop"

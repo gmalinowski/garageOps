@@ -1,0 +1,94 @@
+<%= form_with(model: organization, html: { class: "form" } ) do |f| %>
+  <div class="form__section">
+    <h2 class="form__section-title">title</h2>
+
+    <div class="form__grid">
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :name,
+            type: :text_field,
+            options: {
+                required: true,
+                autofocus: true,
+            } %>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :description,
+            type: :textarea %>
+    </div>
+  </div>
+
+  <div class="form__section">
+    <h2 class="form__section-title">title</h2>
+
+    <div class="form__grid form__grid--two-columns">
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :email,
+            type: :email_field,
+            options: {
+                autocomplete: "email"
+            } %>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :phone,
+            type: :telephone_field,
+            options: {
+                autocomplete: "tel"
+            } %>
+
+      <%= render "shared/form_field",
+            form: f,
+            full_width: true,
+            attribute: :website,
+            type: :url_field %>
+    </div>
+  </div>
+
+  <div class="form__section">
+    <div class="form__section-title">title</div>
+
+    <div class="form__grid form__grid--two-columns">
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :tax_id,
+            type: :text_field %>
+
+      <div class="form__field">
+        <%= f.label :country_code %>
+
+        <%= f.country_select(
+        :country_code,
+        { include_blank: t("countries.select_a_country") },
+        { autocomplete: "country", data: { controller: "country-default" } }
+        ) %>
+      </div>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :address_line_1,
+            type: :text_field %>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :address_line_2,
+            type: :text_field %>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :city,
+            type: :text_field %>
+
+      <%= render "shared/form_field",
+            form: f,
+            attribute: :postal_code,
+            type: :text_field %>
+    </div>
+  </div>
+
+  <div class="form__actions">
+    <%= f.submit t(".create_organization"), class: "button button--primary button--full-width" %>
+  </div>
+<% end %>

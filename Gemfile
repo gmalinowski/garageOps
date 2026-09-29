@@ -69,8 +69,17 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "minitest-mock"
 end
 
 gem "devise", "~> 5.0"
 
 gem "pundit", "~> 2.5"
+
+gem "factory_bot_rails", "~> 6.5", groups: [ :development, :test ]
+
+gem "faker", "~> 3.8", groups: [ :development, :test ]
+
+gem "countries", "~> 8.1"
+
+gem "country_select", "~> 11.0"
