@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
     user = create(:user)
     org_1 = create(:organization)
     org_2 = create(:organization)
-    org_3 = create(:organization)
+    create(:organization)
     create(:membership, user: user, organization: org_1)
     create(:membership, user: user, organization: org_2)
 

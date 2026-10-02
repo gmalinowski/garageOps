@@ -1,26 +1,24 @@
 class Organization < ApplicationRecord
-  PHONE_FORMAT = /\A\+?(?=(?:\D*\d){7})[\d ().-]+\z/
-
   before_validation :set_slug, on: :create
 
   validates :name, presence: true, uniqueness: true, length: { in: 2..120 }
   validates :slug, presence: true, uniqueness: true, length: { maximum: 180 },
     format: { with: /\A[a-z0-9]+(?:-[a-z0-9]+)*\z/ }
   validates :tax_id, uniqueness: true, allow_nil: true, length: { maximum: 32 }
-  validates :description, length: { maximum: 3_000 }
-  validates :email, length: { maximum: 254 }, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true
-  validates :website, length: { maximum: 3_000 }, allow_blank: true
-  validates :phone, length: { maximum: 32 }, format: { with: PHONE_FORMAT }, allow_blank: true
+  validates :description, length: { maximum: 5_000 }
+  validates :email, email: true, allow_nil: true
+  validates :website, length: { maximum: 3_000 }, allow_nil: true
+  validates :phone, phone: true, allow_nil: true
   validates :address_line_1, :address_line_2, length: { maximum: 255 }
   validates :city, length: { maximum: 255 }
   validates :postal_code, length: { maximum: 32 }
-  validates :country_code, inclusion: { in: ISO3166::Country.codes }, allow_blank: true
+  validates :country_code, inclusion: { in: ISO3166::Country.codes }, allow_nil: true
   validates :regon, length: { maximum: 14 }
 
   validate :website_must_be_http_url
 
   normalizes :description,
-             :phone,
+            :phone,
             :address_line_1,
             :address_line_2,
             :city,
@@ -37,6 +35,8 @@ class Organization < ApplicationRecord
 
   has_many :memberships, dependent: :restrict_with_error
   has_many :users, through: :memberships
+
+  has_many :locations, dependent: :restrict_with_error
 
   def to_param
     slug
@@ -60,7 +60,7 @@ class Organization < ApplicationRecord
     self.slug = name.parameterize
 
     while Organization.where(slug: slug).where.not(id: id).exists?
-      self.slug = "#{name.parameterize}-#{SecureRandom.hex(4)}"
+      self.slug = "#{name.parameterize}-#{SecureRandom.hex(3)}"
     end
   end
 end

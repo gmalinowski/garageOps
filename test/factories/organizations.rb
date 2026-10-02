@@ -9,7 +9,7 @@ FactoryBot.define do
     postal_code { Faker::Address.postcode }
     country_code { "PL" }
 
-    phone { Faker::PhoneNumber.phone_number }
+    phone { "+49 777 432 666" }
     email { Faker::Internet.unique.email }
     website { Faker::Internet.url }
 

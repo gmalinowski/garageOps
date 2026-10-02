@@ -38,3 +38,5 @@
 /.ruby-lsp/
 
 .idea/
+
+/config/projections.json
