@@ -77,6 +77,12 @@ en:
       models:
         user:
           requires_organization: "you must belong to an organization"
+        membership_permission:
+          attributes:
+            membership:
+              organization_mismatch: "must belong to the same organization"
+            location:
+              organization_mismatch: "must belong to the same organization"
   devise:
     registrations:
       new:

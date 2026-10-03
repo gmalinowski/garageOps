@@ -34,8 +34,8 @@
       {
         "name": "locations",
         "schemaName": "public",
-        "x": 1920,
-        "y": 1664
+        "x": 1925.1106881978324,
+        "y": 1602.671741626015
       },
       {
         "name": "membership_locations",
@@ -46,14 +46,14 @@
       {
         "name": "permissions",
         "schemaName": "public",
-        "x": 1280,
-        "y": 1296
+        "x": 1280.0000000000005,
+        "y": 1290.889311802168
       },
       {
         "name": "membership_permissions",
         "schemaName": "public",
-        "x": 1032,
-        "y": 1496
+        "x": 943.7039076068315,
+        "y": 1403.4993317785857
       },
       {
         "name": "permission_profiles",
@@ -70,8 +70,8 @@
       {
         "name": "service_orders",
         "schemaName": "public",
-        "x": 1288,
-        "y": 1712
+        "x": 1214.7468024977402,
+        "y": 1732.4427527913285
       },
       {
         "name": "vehicles",
@@ -100,8 +100,8 @@
       {
         "name": "manufacturers",
         "schemaName": "public",
-        "x": 1520,
-        "y": 1464
+        "x": 1511.4821863369466,
+        "y": 1378.8218633694655
       },
       {
         "name": "inventory_stocks",

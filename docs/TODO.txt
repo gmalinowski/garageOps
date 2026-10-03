@@ -1,2 +1,1 @@
 
-- slug, store old slugs and redirect to new
